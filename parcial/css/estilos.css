@@ -1,0 +1,285 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+/* font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-style: normal; */
+
+
+*{
+    font-family: "Rubik", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: black;
+}
+
+body{
+    background-color: #fefffa;
+}
+.navbar-brand {
+    background: url(../img/nav/Logo_Pristine.png) no-repeat center center;
+    width: 150px;
+    height: 30px;
+    display: inline-block;
+    text-indent: -9999px;
+    overflow: hidden;
+    margin-left: 1rem;
+}
+nav.navbar button span {
+    text-indent: -9999px;
+    overflow: hidden;
+}
+a.navLink{
+    color: black;
+    margin-right: 20px;
+    text-decoration: none;
+    padding: 4px;
+}
+a.navLink:hover {
+    border-radius: 8px;
+    border: solid 2px #404C2A;
+}
+nav {
+    background-color: #ffffff !important;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+footer{
+    background-color: #404C2A;
+    padding: 2rem;
+}
+h5{
+    font-weight: 600;
+}
+li{
+    font-size: 14px;
+}
+p b{
+    color: #404C2A;
+}
+h1, h2{
+    padding-bottom: 6rem;
+    padding-top: 1.5rem;
+    color: black;
+    font-weight: 600;
+}
+h2{
+   font-size: 2em;
+}
+h3{
+    font-size: 20px;
+}
+form{
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.form-control,.form-check-input{
+    border: solid 2px #404C2A;
+}
+.form-label{
+    font-weight: 600;
+}
+.card-body a {
+    width: 100%;
+    font-weight: 600;
+    background-color: #404C2A;
+    color: #FAFFED;
+}
+.card-body a:hover{
+    background-color: #A8C1AC;
+    border: solid 2px #404C2A;
+    color: black;
+}
+.card{
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.4);
+    margin-top: 1rem;
+}
+.card-text{
+    width: 100%;
+}
+.col p{
+    font-size: 18px;
+}
+.col img{
+    border-radius: 6px;
+}
+.btn {
+    letter-spacing: 1px;
+    background-color: #404C2A;
+    color: #FAFFED;
+    border-radius: 8px;
+    width: 100%;
+    margin-top: 1rem;
+}
+.btn:hover{
+    color: #404C2A;
+    background-color: #FAFFED;
+    border: solid 2px #404C2A;
+    font-weight: 600;
+}
+.navbar-collapse{
+    flex-grow: 0;
+}
+.navLinkLogos span {
+    width: 60px;
+}
+.material-symbols-outlined:hover {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 200,
+  'GRAD' 0,
+  'opsz' 24
+}
+.material-symbols-outlined {
+    font-size: 30px; 
+    color: black; 
+    font-weight: 200;
+    margin-right: 10px;
+}
+.material-symbols-outlined:hover {
+    color: #404C2A;
+}
+.table-responsive {
+    overflow-x: auto;
+}
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.th, td {
+    padding: 8px;
+}
+
+.th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #f2f2f2;
+}
+.botonesEditar{
+    background-color: #A8C1AC !important;
+    color: black !important;
+    border: solid 2px #404C2A;
+}
+.botonesEditar:hover{
+    background-color: #FAFFED !important;
+    color: #404C2A !important;
+    border:  solid 2px #404C2A;
+}
+.botonesEliminar:hover{
+    background-color: #FAFFED !important;
+    color: #404C2A !important;
+    border:  solid 2px #404C2A;
+}
+
+#container1{
+    display: flex;
+    align-items: center;
+    margin-top: 9rem;
+}
+#botonesCarrito{
+    padding-bottom: 10rem;
+}
+#tablaCarrito{
+    padding-right: 3rem;
+}
+#containerCat{
+    margin-top: 7rem;
+}
+#containerBest{
+    padding-top: 3rem;
+}
+#divDescripcion{
+    margin-top: 10rem;
+}
+#botonSeguir{
+    margin-bottom: 10rem;
+}
+.containerForm{
+    width: 70%;
+    margin: 0 auto;
+    padding-bottom: 5rem;
+}
+#containerInfo img{
+    border-radius: 8px;
+}
+#containerBanner{
+    padding-top: 1.5rem;
+    padding-bottom: 3rem;
+    max-width: 100%;
+}
+#containerBanner img{
+    border-radius: 6px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.243);
+}
+#containerCard{
+    padding-bottom: 5rem;
+}
+#containerProducto{
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    padding: 2rem 2rem 2rem 2rem;
+    width: 80%;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.275);
+}
+#containerProducto img{
+    margin-right: 4rem;
+    margin-top: 4rem;
+}
+#contProducto{
+    margin-left: 4rem;
+}
+#descripcion{
+    margin-top: -2rem;
+}
+#parrafo404{
+    padding-bottom: 18rem;
+}
+#containerAlumna{
+    padding-bottom: 5rem;
+    width: 70%;
+}
+#containerAlumna li{
+    background-color: #fefffa;
+}
+
+#containerFooter h3{
+    font-weight: 600;
+    color: #fefffa;
+}
+#containerFooter ul li{
+    list-style: none;
+    margin-left: -2rem;
+    color: #fefffa;
+}
+#containerFooter li a{
+    color: #fefffa;
+}
+#tituloContenido1{
+font-size: 1.5rem;
+margin-top: 3rem;
+line-height: 2em;
+}
+#divInfo{
+    margin-top: 2em;
+}
+#containerNav{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+#logoCart{
+    font-size: 28px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .card{
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
