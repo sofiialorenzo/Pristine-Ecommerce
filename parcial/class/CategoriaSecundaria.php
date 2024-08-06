@@ -28,7 +28,7 @@ class CategoriaSecundaria {
     /**
      * Get the value of nombre
      */ 
-    public function getNombreCategoriaSec()
+    public function getNombre()
     {
         return $this->nombre;
     }
@@ -38,48 +38,53 @@ class CategoriaSecundaria {
      *
      * @return  self
      */ 
-    public function setNombreCategoriaSec($nombre)
+    public function setNombre($nombre)
     {
         $this->nombre = $nombre;
 
         return $this;
     }
 
-    public function catalogo_completo(){
+    public function catalogo_completo(): array
+    {
+        $catalogo = [];
         $conexion = Conexion::getConexion();
         $query = "SELECT * FROM categorias_secundarias";
         $PDOStatement = $conexion->prepare($query);
+        $PDOStatement->setFetchMode(PDO::FETCH_CLASS, self::class);
         $PDOStatement->execute();
-        return $PDOStatement->fetchAll(PDO::FETCH_CLASS, self::class);
+
+        $catalogo = $PDOStatement->fetchAll();
+        return $catalogo;
+        
     }
 
-    // public function get_x_id($id){
-    //     $conexion = Conexion::getConexion();
-    //     $query = "SELECT * FROM categorias_secundarias WHERE id = :id";
-    //     $PDOStatement = $conexion->prepare($query);
-    //     $PDOStatement->setFetchMode(PDO::FETCH_CLASS, self::class);
-    //     $PDOStatement->execute(['id' => $id]);
-    //     $resultado = $PDOStatement->fetch();
+    public function catalogo_x_id(int $id)
+    {
+        $categorias = $this->catalogo_completo();
 
-    //     return $resultado ? $resultado : null;
-    // }
+        foreach ($categorias as $categoria) {
+            if ($categoria->id == $id) {
+                return $categoria;
+            }
+        }
 
-    // public static function getCategoriasSecundarias($producto_id){
-    //     $conexion = Conexion::getConexion();
-    //     $query = "SELECT GROUP_CONCAT(categorias_secundarias.nombre) AS categorias_secundarias FROM categorias_secundarias
-    //     INNER JOIN productos_categorias ON categorias_secundarias.id = productos_categorias.categoria_id WHERE productos_categorias.producto_id = :producto_id";
-    //     $PDOStatement = $conexion->prepare($query);
-    //     $PDOStatement->execute(['producto_id' => $producto_id]);
-    //     $result = $PDOStatement->fetch(PDO::FETCH_ASSOC);
+        return [];
+    }
 
-    //     return $result ? $result['categorias_secundarias'] : 'No hay categorías secundarias';
-    // }
 
-    public function insert($nombre){
-        $conexion = Conexion::getConexion();
-        $query = "INSERT INTO categorias_secundarias (nombre) VALUES (:nombre)";
-        $PDOStatement = $conexion->prepare($query);
-        $PDOStatement->execute(['nombre' => $nombre]);
+
+    public function insert($nombre): void
+    {
+        try {
+            $conexion = Conexion::getConexion();
+            $query = "INSERT INTO categorias_secundarias VALUES (null, :nombre )";
+            $PDOStatement = $conexion->prepare($query);
+            $PDOStatement->execute(['nombre' => $nombre]);
+        } catch (Exceptiion $e) {
+            echo $e->getMessage();
+        }
+        
     }
     public function delete(){
         $conexion = Conexion::getConexion();
@@ -89,29 +94,13 @@ class CategoriaSecundaria {
             "id" => htmlspecialchars($this->id)
         ]);
     }
-
-    public function catalogo_x_id(int $id){
+    public function edit($nombre, $id){
         $conexion = Conexion::getConexion();
-        $query = "SELECT * FROM categorias_secundarias WHERE id = :id";
+        $query = "UPDATE categorias_secundarias SET nombre=:nombre WHERE id = :id";
         $PDOStatement = $conexion->prepare($query);
-        $PDOStatement->setFetchMode(PDO::FETCH_CLASS, self::class);
-        $PDOStatement->execute(['id' => $id]);
-        $categoria = $PDOStatement->fetch();
-        
-        if ($categoria) {
-            return $categoria;
-        } else {
-            // Devuelve null si no se encuentra la categoría
-            return null;
-        }
-        // $categorias = $this->catalogo_completo();
-
-        // foreach ($categorias as $categoria) {
-        //     if ($categoria->id == $id) {
-        //         return $categoria;
-        //     }
-        // }
-
-        // return [];
+        $PDOStatement->execute([
+            "nombre" => htmlspecialchars($nombre),
+            "id" => htmlspecialchars($id)
+        ]);
     }
 }

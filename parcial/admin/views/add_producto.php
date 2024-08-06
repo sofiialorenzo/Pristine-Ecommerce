@@ -1,11 +1,12 @@
 <?php
     $categorias = (new Categoria())->catalogo_completo();
     $marcas = (new Marca())->catalogo_completo();
+    $categorias_secundarias = (new CategoriaSecundaria())->catalogo_completo();
 ?>
 
 <div class="row my-5">
     <div class="col">
-        <h1 class="text-center mb-5 fw-bold">Administracion de producto</h1>
+        <h1 class="text-center mb-5 fw-bold">AGREGAR PRODUCTO</h1>
         <div class="row mb-5 d-flex align-items-center">
             <form class="row g-3" action="actions/add_producto_acc.php" method="post" enctype="multipart/form-data">
                 <div class="col-md-6 mb-3">
@@ -29,7 +30,23 @@
                             <option value="<?= $marca->getId() ?>"><?= $marca->getMarcaCompleta() ?></option>
                         <?php } ?>
                     </select>
-                </div>       
+                </div>
+                
+                <div class="col-md-6 mb-3">
+                    <label class="mt-2 d-flex form-label" for="">Categorías Secundarias</label>
+                    <?php foreach ($categorias_secundarias as $categoria_secundaria) { ?>
+                    <div class="d-inline">
+                        <input class="btn-check" type="checkbox" name="categorias_secundarias[]"
+                            id="categoria_secundaria<?= $categoria_secundaria->getId() ?>"
+                            value="<?= $categoria_secundaria->getId() ?>"
+                        >
+                        <label class="btn" for="categoria_secundaria<?= $categoria_secundaria->getId() ?>">
+                            <?= $categoria_secundaria->getNombre() ?>
+                        </label>
+                    </div>
+                    <?php } ?>
+                </div>
+
                 <div class="col-md-6 mb-3">
                     <label class="form-label">Contenido Neto</label>
                     <input class="form-control" type="text" name="contNeto">

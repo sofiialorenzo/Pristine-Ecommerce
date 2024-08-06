@@ -31,7 +31,7 @@ class Marca{
      */ 
     public function getMarcaCompleta()
     {
-        return $this->marca_completa;
+        return $this->nombre;
     }
 
     /**
@@ -41,7 +41,7 @@ class Marca{
      */ 
     public function setMarcaCompleta($marca_completa)
     {
-        $this->marca_completa = $marca_completa;
+        $this->nombre = $marca_completa;
 
         return $this;
     }
@@ -74,10 +74,10 @@ class Marca{
     {
         try {
             $conexion = Conexion::getConexion();
-            $query = "INSERT INTO marcas (marca_completa) VALUES (:marca_completa)";
+            $query = "INSERT INTO marcas VALUES (null, :nombre)";
             $PDOStatement = $conexion->prepare($query);
             $PDOStatement->execute([
-                "marca_completa" => $marca_completa,
+                "nombre" => $marca_completa,
             ]);
         } catch (Exception $e) {
             echo $e->getMessage();

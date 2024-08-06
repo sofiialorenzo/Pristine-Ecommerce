@@ -2,7 +2,7 @@
 require_once "../../functions/autoload.php";
 
 $id = $_GET["id"] ?? false;
-$categoria = (new Categoria())->catalogo_x_id($id);
+$categoria = (new CategoriaSecundaria())->catalogo_x_id($id);
 try {
     $categoria->delete();
 } catch (Exception $e) {

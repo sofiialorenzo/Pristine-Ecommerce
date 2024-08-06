@@ -34,7 +34,7 @@ class Categoria{
      */ 
     public function getNombreCategoria()
     {
-        return $this->nombre_categoria;
+        return $this->nombre;
     }
 
     /**
@@ -80,10 +80,10 @@ class Categoria{
     {
         try {
             $conexion = Conexion::getConexion();
-            $query = "INSERT INTO categorias (nombre_categoria) VALUES (:nombre_categoria)";
+            $query = "INSERT INTO categorias VALUES (null, :nombre)";
             $PDOStatement = $conexion->prepare($query);
             $PDOStatement->execute([
-                "nombre_categoria" => $nombre_categoria,
+                "nombre" => $nombre_categoria,
             ]);
         } catch (Exception $e) {
             echo $e->getMessage();

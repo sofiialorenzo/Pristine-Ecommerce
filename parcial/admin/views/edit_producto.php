@@ -1,6 +1,7 @@
 <?php
 $categorias = (new Categoria())->catalogo_completo();
 $marcas = (new Marca())->catalogo_completo();
+$categorias_secundarias = (new CategoriaSecundaria())->catalogo_completo();
 $producto = (new Producto())->catalogo_x_id($_GET["id"]);
 
 
@@ -8,7 +9,7 @@ $producto = (new Producto())->catalogo_x_id($_GET["id"]);
 
 <div class="row my-5">
     <div class="col">
-        <h1 class="text-center mb-5 fw-bold">Administracion de producto</h1>
+        <h1 class="text-center mb-5 fw-bold">EDITAR PRODUCTO</h1>
         <div class="row mb-5 d-flex align-items-center">
             <form class="row g-3" action="actions/edit_producto_acc.php" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="id" value="<?= $producto->getId() ?>">
@@ -34,6 +35,31 @@ $producto = (new Producto())->catalogo_x_id($_GET["id"]);
                         <?php } ?>
                     </select>
                 </div>
+
+                <div class="d-flex flex-column gap-2">
+                      <label class="mt-2 d-flex form-label" for="">Categorías Secundarias </label>
+                      <div>
+                        <?php foreach ($categorias_secundarias as $categoria_secundaria) { 
+                          $categoria_seleccionada = explode(",",$producto->getCategoriasSecundarias());        
+                        ?>
+                        <div class="d-inline">
+                            <input class="btn-check" type="checkbox" name="categorias_secundarias[]"
+                                id="categoria_secundaria<?= $categoria_secundaria->getId() ?>"
+                                <?= in_array( $categoria_secundaria->getId(), $categoria_seleccionada) ? "checked" : ""  ?>
+                                value="<?= $categoria_secundaria->getId() ?>"
+                                >
+                            <label class="btn" for="categoria_secundaria<?= $categoria_secundaria->getId() ?>">
+                                <?= $categoria_secundaria->getNombre() ?>
+                            </label>
+                        </div>
+                        <?php } ?>
+                      </div>
+                  </div>
+                </div>
+
+
+
+
                 <div class="col-md-6 mb-3">
                     <label class="form-label">Contenido Neto</label>
                     <input class="form-control" type="text" name="contenidoNeto" value="<?= $producto->getContenidoNeto() ?>">

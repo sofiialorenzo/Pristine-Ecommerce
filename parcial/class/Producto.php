@@ -7,6 +7,8 @@ class Producto{
     protected $marca;
     protected $contenidoNeto;
     protected $categoria;
+    protected $categorias_ids;
+    protected $categorias_secundarias;
 
     protected static $valores = ["id", "nombreProducto", "imagen", "descripcion", "contenidoNeto", "precio"];
 
@@ -18,7 +20,23 @@ class Producto{
 
        $producto->marca = (new Marca())->get_x_id($productoArrayAsociativo["marca_id"]);
        $producto->categoria = (new Categoria())->catalogo_x_id($productoArrayAsociativo["categoria_id"]);
+       $CSids = explode(",", $productoArrayAsociativo["categorias_secundarias"]);
+        $categorias_array = [];
+        foreach ($CSids as $CSid) {
+            $categorias_array []= (new CategoriaSecundaria())->catalogo_x_id(intval($CSid));
+        }
+        $producto->categorias_secundarias = $categorias_array;
+        $producto->categorias_ids = $productoArrayAsociativo["categorias_secundarias"];
 
+    return $producto;
+}
+
+public function mapearCat($productoArrayAsociativo) : self {
+    $producto = new self();
+    foreach (self::$valores as $valor) {
+        $producto->{$valor} = $productoArrayAsociativo[$valor];
+    }
+    $producto->categoria = (new Categoria())->get_x_id($productoArrayAsociativo["categoria_id"]);
     return $producto;
 }
  
@@ -30,7 +48,9 @@ class Producto{
 
         $catalogo = [];
         $conexion = Conexion::getConexion();
-        $query = "SELECT * FROM productos";
+        $query = "SELECT productos.*, GROUP_CONCAT(productos_categorias.categoria_id) AS categorias_secundarias FROM productos 
+        LEFT JOIN productos_categorias ON productos.id = productos_categorias.producto_id 
+        GROUP BY productos.id";
 
          $PDOStatement = $conexion->prepare($query);
          $PDOStatement->setFetchMode(PDO::FETCH_ASSOC);
@@ -71,10 +91,10 @@ class Producto{
 
     try {
         $conexion = Conexion::getConexion();
-        $query = "SELECT categorias.id AS categoria_id, categorias.nombre_categoria AS categoria_nombre 
+        $query = "SELECT categorias.id AS categoria_id, categorias.nombre AS categoria
                   FROM categorias
                   INNER JOIN productos ON categorias.id = productos.categoria_id
-                  GROUP BY categorias.id, categorias.nombre_categoria";
+                  GROUP BY categorias.id, categorias.nombre";
         $PDOStatement = $conexion->prepare($query);
         $PDOStatement->execute();
         $categorias = $PDOStatement->fetchAll(PDO::FETCH_ASSOC);
@@ -188,6 +208,25 @@ class Producto{
             "id" => htmlspecialchars($this->id)
         ]);
     }
+    public function add_categorias($categoria_id, $producto_id){
+        $conexion = Conexion::getConexion();
+        $query = "INSERT INTO `productos_categorias` (`id`, `categoria_id`, `producto_id`) VALUES (NULL, :categoria_id, :producto_id)";
+        $PDOStatement = $conexion->prepare($query);
+        $PDOStatement->execute([
+            "categoria_id" => $categoria_id,
+            "producto_id" => $producto_id
+        ]);
+      }
+
+      public function clear_talles($id){
+        $conexion = Conexion::getConexion();
+        $query = "DELETE FROM productos_categorias WHERE producto_id = :id";
+        $PDOStatement = $conexion->prepare($query);
+        $PDOStatement->execute([
+            "id" => $id,
+        ]);
+      }
+
 
     public function getId(){
         return $this->id;
@@ -237,27 +276,14 @@ class Producto{
         return $this->marca->getId();
     }
     public function getCategoriasSecundarias(){
-        return $this->categorias_sec;
+        return $this->categorias_ids;
 }
 
-public function getNombresCatSecundarias(){
-    if (is_string($this->categorias_sec)) {
-        $categorias_sec_ids = explode(',', $this->categorias_sec);
-    } elseif (is_array($this->categorias_sec)) {
-        $categorias_sec_ids = $this->categorias_sec;
-    } else {
-        return ''; 
+    public function getCategorias_id(){
+        return $this->categorias_secundarias;
     }
 
-    $categorias_nombres = [];
-        foreach ($categorias_sec_ids as $id) {
-            $categoria = ( new CategoriaSecundaria() )->catalogo_x_id(trim($id));
-            if ($categoria) {
-                $categorias_nombres[] = $categoria->getNombreCategoriaSec();
-            }
-        }
-        return implode(', ', $categorias_nombres);
-    }
+
 }
 
 

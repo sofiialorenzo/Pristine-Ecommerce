@@ -4,7 +4,8 @@ echo "<pre>";
 print_r($_POST);
 echo "</pre>";
 require_once "../../functions/autoload.php";
-$fileData = $_FILES["portada"] ?? FALSE;
+$fileData = $_FILES["imagen"] ?? FALSE;
+$categorias = $_POST["categorias_secundarias"];
 try {
     $producto = new Producto();
 
@@ -25,6 +26,11 @@ try {
         $_POST["descripcion"],
         $_POST["id"]
     );
+
+    foreach ($categorias as $categoria_id) {
+        (new Producto())->add_talles($_POST["id"], $categoria_id);
+    }
+
     (new Alerta())->add_alerta("Se pudo editar", "success");
     header("Location: ../index.php?sec=admin_comics");
 } catch (Exception $e) {
