@@ -42,6 +42,9 @@ $secciones_validas = [
     'delete_categoria' => [
         'titulo' => 'Eliminar Categoria',
     ],
+    'listar_usuarios' => [
+        'titulo' => 'Lista de usuarios',
+    ],
 ];
 
 $seccion = $_GET['sec'] ?? 'dashboard';
@@ -94,6 +97,9 @@ if (!array_key_exists($seccion, $secciones_validas)) {
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?sec=admin_categorias">Categorias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php?sec=listar_usuarios">Usuarios</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="actions/auth_logout.php">Salir</a>

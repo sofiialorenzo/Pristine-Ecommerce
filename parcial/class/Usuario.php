@@ -120,6 +120,19 @@ class Usuario{
         return $result;
     }
 
+    public function catalogo_completo(): array {
+        $catalogo = [];
+        $conexion = Conexion::getConexion();
+        $query = "SELECT * FROM usuarios";
+        $PDOStatement = $conexion->prepare($query);
+        $PDOStatement->setFetchMode(PDO::FETCH_CLASS, self::class);
+        $PDOStatement->execute();
+
+        $catalogo = $PDOStatement->fetchAll();
+
+        return $catalogo;
+    }
+
     public function insert(string $email, string $password){
         $conexion = Conexion::getConexion();
         $query = "INSERT INTO usuarios VALUES (NULL, '$email', '', '', '$password', 'usuario')";

@@ -20,13 +20,18 @@ class Producto{
 
        $producto->marca = (new Marca())->get_x_id($productoArrayAsociativo["marca_id"]);
        $producto->categoria = (new Categoria())->catalogo_x_id($productoArrayAsociativo["categoria_id"]);
-       $CSids = explode(",", $productoArrayAsociativo["categorias_secundarias"]);
+       if (isset($productoArrayAsociativo["categorias_secundarias"])) {
+        $CSids = explode(",", $productoArrayAsociativo["categorias_secundarias"]);
         $categorias_array = [];
         foreach ($CSids as $CSid) {
-            $categorias_array []= (new CategoriaSecundaria())->catalogo_x_id(intval($CSid));
+            $categorias_array[] = (new CategoriaSecundaria())->catalogo_x_id(intval($CSid));
         }
         $producto->categorias_secundarias = $categorias_array;
         $producto->categorias_ids = $productoArrayAsociativo["categorias_secundarias"];
+    } else {
+        $producto->categorias_secundarias = [];
+        $producto->categorias_ids = '';
+    }
 
     return $producto;
 }

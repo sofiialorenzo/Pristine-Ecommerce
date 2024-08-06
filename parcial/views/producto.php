@@ -1,6 +1,19 @@
 <?php
 $id = $_GET['id'];
 $producto = (new Producto())->catalogo_x_id($id);
+$categorias = (new CategoriaSecundaria())->catalogo_completo();
+
+// Variable para almacenar los nombres de las categorías secundarias seleccionadas
+$categorias_secundarias_nombres = [];
+$categorias_secundarias_ids = explode(',', $producto->getCategoriasSecundarias());
+
+foreach ($categorias as $categoria) {
+    if (in_array($categoria->getId(), $categorias_secundarias_ids)) {
+        $categorias_secundarias_nombres[] = $categoria->getNombre();
+    }
+}
+
+$categorias_secundarias_texto = implode(', ', $categorias_secundarias_nombres);
 ?>
 
 <div class="container" id="containerProducto">
@@ -16,6 +29,7 @@ $producto = (new Producto())->catalogo_x_id($id);
                 <li class="list-group-item">Marca: <?= $producto->getMarcaProducto() ?></li>
                 <li class="list-group-item">Contenido Neto: <?= $producto->getContenidoNeto() ?></li>
                 <li class="list-group-item">Categoria: <?= $producto->getCategoria() ?></li>
+                <li class="list-group-item">Categorías Secundarias: <?= $categorias_secundarias_texto ?></li>
                
                 </ul>
             </div>

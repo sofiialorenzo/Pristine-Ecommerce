@@ -22,7 +22,7 @@ $categorias_id = ( new Producto())->categorias_validas();
         <?php foreach ($categorias_id as $categoria) { ?>
                         <li class="nav-item">
                             <a class="navLink" href="index.php?sec=productos&categoria=<?= $categoria['categoria_id'] ?>">
-                                <?= $categoria['categoria_nombre'] ?>
+                                <?= $categoria['categoria'] ?>
                             </a>
                         </li>
                     <?php } ?>
