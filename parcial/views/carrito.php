@@ -1,7 +1,8 @@
 <?php
 
 $miCarrito = new Carrito();
-$items = ($miCarrito)->getCarrito();
+$items = ($miCarrito)->getCarrito_Usuario();
+
 ?>
 <h1>Carrito de compras</h1>
 <div class="table-responsive">
@@ -20,19 +21,19 @@ $items = ($miCarrito)->getCarrito();
                 </tr>
             </thead>
             <tbody id="tablaCarrito">
-                <?php foreach( $items as $key => $item ) {?>
+                <?php foreach( $items as $item ) {  ?>
                     <tr>
-                        <td><img class="img-fluid rounded shadow-sm" src="img/productos/<?= $item["imagen"]; ?>" alt="<?= $item["producto"]; ?>" width="50"></td>
+                        <td><img class="img-fluid rounded shadow-sm" src="img/productos/<?= $item["imagen"]; ?>" alt="<?= $item["nombreProducto"]; ?>" width="50"></td>
                         <td class="align-middle">
-                            <p class="h5"><?= $item["producto"]; ?></p>
+                            <p class="h5"><?= $item["nombreProducto"]; ?></p>
                         </td>
                         <td>
-                            <input type="number" value="<?= $item["cantidad"]; ?>" name="c[<?= $key ?>]" class="form-control">
+                        <input type="number" value="<?= $item["cantidad"]; ?>" name="c[<?= $item['producto_id'] ?>]" class="form-control">
                         </td>
                         <td class="align-middle"> <p class="h5 py-3"><?= $item["precio"]; ?></p></td>
                         <td class="align-middle"> <p class="h5 py-3"> <?= $item["precio"] * $item["cantidad"]; ?> </p> </td>
                         <td class="text-end align-middle">
-                            <a class="btn" href="admin/actions/remove_item_acc.php?id=<?= $key ?>">Eliminar</a>
+                            <a class="btn" href="admin/actions/remove_item_acc.php?id=<?= $item['producto_id'] ?>">Eliminar</a>
                         </td>
                     </tr>
                 <?php } ?> 
@@ -41,7 +42,7 @@ $items = ($miCarrito)->getCarrito();
                         <h2 class="h5 py-3">Total: </h2>
                     </td>
                     <td>
-                        <p class="h5 py-3"><?= $miCarrito->getTotal() ?></p>
+                        <p class="h5 py-3"><?= $miCarrito->getTotal_Usuario() ?></p>
                     </td>
                     <td></td>
                 </tr>

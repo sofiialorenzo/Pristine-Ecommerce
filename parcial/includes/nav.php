@@ -1,7 +1,6 @@
 <?php
 session_start();
 $categorias_id = ( new Producto())->categorias_validas();
-$compras = (new Carrito())->llamarCompra();
 ?>
     <div class="sticky-top">
     <nav class="navbar navbar-expand-lg">
@@ -72,11 +71,11 @@ $compras = (new Carrito())->llamarCompra();
                 <?php
                 // Cargar las compras del usuario
                 $usuario_id = $_SESSION['login']['id'];
-                // $conexion = Conexion::getConexion();
-                // $query = "SELECT * FROM carrito WHERE usuario_id = :usuario_id";
-                // $PDOStatement = $conexion->prepare($query);
-                // $PDOStatement->execute(['usuario_id' => $usuario_id]);
-                // $compras = $PDOStatement->fetchAll(PDO::FETCH_ASSOC);
+                $conexion = Conexion::getConexion();
+                $query = "SELECT * FROM carrito WHERE usuario_id = :usuario_id";
+                $PDOStatement = $conexion->prepare($query);
+                $PDOStatement->execute(['usuario_id' => $usuario_id]);
+                $compras = $PDOStatement->fetchAll(PDO::FETCH_ASSOC);
                 ?>
 
                 <?php if (!empty($compras)): ?>
