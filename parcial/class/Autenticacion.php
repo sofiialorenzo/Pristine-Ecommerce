@@ -19,6 +19,7 @@ class Autenticacion
                 $datosLogin['id'] = $usuario->getId();
                 $datosLogin['roles'] = $usuario->getRoles();
                 $datosLogin['email'] = $usuario->getEmail();
+                $datosLogin['nombre_completo'] = $usuario->getNombre_completo();
 
                 $_SESSION['login'] = $datosLogin;
                 return true;

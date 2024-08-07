@@ -1,6 +1,7 @@
 <?php
 session_start();
 $categorias_id = ( new Producto())->categorias_validas();
+$compras = (new Carrito())->llamarCompra();
 ?>
     <div class="sticky-top">
     <nav class="navbar navbar-expand-lg">
@@ -35,12 +36,13 @@ $categorias_id = ( new Producto())->categorias_validas();
     <ul class="navbar-nav ms-auto">
 
     <?php if( isset($_SESSION["login"]) ){ ?>       
-                    <li class="nav-item">
-                        <a class="nav-link" href="admin/actions/auth_logout.php">Salir</a>
-                    </li>    
+                        <li class="nav-item">
+                            <a class="navLinkLogos" href="#" data-bs-toggle="modal" data-bs-target="#userModal"><i class="material-symbols-outlined">person</i>
+                            </a>
+                        </li>    
                     <?php }else{ ?>
                       <li class="nav-item">
-                      <a class="navLinkLogos" href="index.php?sec=login"><i class="material-symbols-outlined outlined">person</i>
+                      <a class="navLinkLogos" href="index.php?sec=login"><i class="material-symbols-outlined outlined">log in/sign in</i>
                       </a>
                       </li>  
                     <?php } ?> 
@@ -52,5 +54,62 @@ $categorias_id = ( new Producto())->categorias_validas();
   </div>
 </nav>
 </div>
+
+
+<!-- Modal de Usuario -->
+<div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="userModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="userModalLabel">Bienvenido <?= $_SESSION["login"]['username']; ?> !</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Nombre completo:</strong> <?= $_SESSION['login']['nombre_completo']; ?></p>
+                <p><strong>Nombre de usuario:</strong> <?= $_SESSION["login"]['username']; ?></p>
+                <p><strong>Email:</strong> <?= $_SESSION["login"]['email']; ?></p>
+                
+                <?php
+                // Cargar las compras del usuario
+                $usuario_id = $_SESSION['login']['id'];
+                // $conexion = Conexion::getConexion();
+                // $query = "SELECT * FROM carrito WHERE usuario_id = :usuario_id";
+                // $PDOStatement = $conexion->prepare($query);
+                // $PDOStatement->execute(['usuario_id' => $usuario_id]);
+                // $compras = $PDOStatement->fetchAll(PDO::FETCH_ASSOC);
+                ?>
+
+                <?php if (!empty($compras)): ?>
+                    <h5 class="mt-3">Compras realizadas:</h5>
+                    <table class="table mt-2">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nombre del Producto</th>
+                                <th scope="col">Cantidad</th>
+                                <th scope="col">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($compras as $compra): ?>
+                            <tr>
+                                <td><?= htmlspecialchars($compra['nombreProducto']); ?></td>
+                                <td><?= htmlspecialchars($compra['cantidad']); ?></td>
+                                <td><?= htmlspecialchars($compra['total']); ?></td>
+                            </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                <?php else: ?>
+                    <p class="mt-3">No se encontraron compras para este usuario.</p>
+                <?php endif; ?>
+
+            </div>
+            <div class="modal-footer">
+                <a href="admin/actions/auth_logout.php" class="btn">Cerrar Sesión</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 
  

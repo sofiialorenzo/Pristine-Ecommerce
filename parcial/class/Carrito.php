@@ -94,4 +94,12 @@ class Carrito{
 
         return false;
     }
+
+    public function llamarCompra() {
+                $conexion = Conexion::getConexion();
+                $query = "SELECT * FROM carrito WHERE usuario_id = :usuario_id";
+                $PDOStatement = $conexion->prepare($query);
+                $PDOStatement->execute(['usuario_id' => $usuario_id]);
+                $compras = $PDOStatement->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
