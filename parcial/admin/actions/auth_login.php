@@ -8,6 +8,9 @@ $pass = $_POST["pass"];
 $login = (new Autenticacion())->log_in($email, $pass);
 
 if($login){
+    $_SESSION['user_id'] = $login['id']; 
+    $_SESSION['roles'] = $login['roles']; 
+
     if($_SESSION["login"]["roles"] != "usuario" ){
         (new Alerta())->add_alerta("Bienvenido administrador", "success");
         header("Location: ../index.php");

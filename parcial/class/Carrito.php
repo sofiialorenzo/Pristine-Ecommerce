@@ -61,4 +61,37 @@ class Carrito{
             (new Alerta())->add_alerta("No se ha eliminado el producto", "danger");
         }
     }
+
+    public function guardarCompra(int $usuario_id) {
+        $conexion = Conexion::getConexion();
+        $carrito = $this->getCarrito();
+
+        if (!empty($carrito)) {
+            try {
+                // Guardar cada producto en la tabla `carrito`
+                $query = "INSERT INTO carrito (usuario_id, producto_id, nombreProducto, imagen, cantidad, total)VALUES (:usuario_id, :producto_id, :nombreProducto, :imagen, :cantidad, :total)";
+                $PDOStatement = $conexion->prepare($query);
+
+                foreach ($carrito as $producto_id => $item) {
+                    $PDOStatement->execute([
+                        'usuario_id' => $usuario_id,
+                        'producto_id' => $producto_id,
+                        'nombreProducto' => $item["producto"],
+                        'imagen' => $item["imagen"],
+                        'cantidad' => $item["cantidad"],
+                        'total' => $item["precio"]
+                    ]);
+                }
+
+                $this->vaciarCarrito();
+                return true;
+
+            } catch (Exception $e) {
+                echo "Error al guardar la compra: " . $e->getMessage();
+                return false;
+            }
+        }
+
+        return false;
+    }
 }

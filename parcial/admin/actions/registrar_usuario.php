@@ -1,8 +1,9 @@
 <?php
 
 require_once "../../functions/autoload.php";
-
+$nombre_completo = $_POST["nombre"];
 $email = $_POST["email"];
+$username = $_POST["username"];
 $pass = password_hash($_POST["pass"], PASSWORD_DEFAULT);
 
 try {
@@ -10,7 +11,7 @@ try {
     if($usuarioAnterior){
         //mensaje al usuario
     }else{
-        (new Usuario())->insert($email, $pass);        
+        (new Usuario())->insert($username, $email, $nombre_completo, $pass);        
     }
     header("Location: ../../index.php?sec=login");
 } catch (Exeption $e) {

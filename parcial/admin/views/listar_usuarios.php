@@ -28,7 +28,7 @@ $usuarios = (new Usuario())->catalogo_completo();
                         <td><?= $usuario->getNombreUsuario() ?> </td>
                         <td><?= $usuario->getNombre_completo() ?> </td>
                         <td>
-                            <a href="index.php?sec=delete_marca&id=<?= $marca->getId() ?>" class="d-block btn btn-sm">Eliminar</a>
+                            <a href="index.php?sec=compras_usuarios&usuario_id=<?= $usuario->getId() ?>" class="d-block btn btn-sm">Ver Compras</a>
                         </td>
                     </tr>
                     <?php } ?>

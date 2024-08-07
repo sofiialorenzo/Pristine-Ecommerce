@@ -45,6 +45,9 @@ $secciones_validas = [
     'listar_usuarios' => [
         'titulo' => 'Lista de usuarios',
     ],
+    'compras_usuarios' => [
+        'titulo' => 'Compras del usuario',
+    ],
 ];
 
 $seccion = $_GET['sec'] ?? 'dashboard';

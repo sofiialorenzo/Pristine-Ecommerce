@@ -52,7 +52,7 @@ $items = ($miCarrito)->getCarrito();
             <input type="submit" value="Actualizar cantidades" class="btn">
             <a class="btn" href="index.php?sec=catalogo">Seguir Comprando</a>
             <a class="btn"  href="admin/actions/vaciar_carrito_acc.php">Vaciar Carrito</a>
-            <a class="btn"  href="">Finalizar Compra</a>
+            <a class="btn"  href="admin/actions/finalizar_compra_acc.php">Finalizar Compra</a>
         </div>
     </form>
     <?php }else{ ?>

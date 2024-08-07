@@ -41,7 +41,7 @@ class Usuario{
      */ 
     public function getNombreUsuario()
     {
-        return $this->nombre_usuario;
+        return $this->username;
     }
 
     /**
@@ -49,7 +49,7 @@ class Usuario{
      */ 
     public function setNombreUsuario($nombre_usuario): self
     {
-        $this->nombre_usuario = $nombre_usuario;
+        $this->username = $nombre_usuario;
 
         return $this;
     }
@@ -133,9 +133,9 @@ class Usuario{
         return $catalogo;
     }
 
-    public function insert(string $email, string $password){
+    public function insert(string $nombre_completo, string $email, string $nombre_usuario, string $password){
         $conexion = Conexion::getConexion();
-        $query = "INSERT INTO usuarios VALUES (NULL, '$email', '', '', '$password', 'usuario')";
+        $query = "INSERT INTO usuarios VALUES (NULL, '$email', '$nombre_usuario', '$nombre_completo', '$password', 'usuario')";
         $PDOStatement = $conexion->prepare($query);
         $PDOStatement->execute();
     }
