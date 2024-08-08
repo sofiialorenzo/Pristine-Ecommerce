@@ -20,7 +20,7 @@ $categorias = (new CategoriaSecundaria())->catalogo_completo();
                     <tr>
                         <td><?= $categoria->getNombre() ?> </td>
                         <td>
-                            <a href="index.php?sec=edit_categoria&id=<?= $categoria->getId() ?>" class="d-block btn btn-sm btn-warning mb-1">Editar</a>
+                            <a href="index.php?sec=edit_categoria&id=<?= $categoria->getId() ?>" class="d-block btn btn-sm btn mb-1">Editar</a>
                             <a href="index.php?sec=delete_categoria&id=<?= $categoria->getId() ?>" class="d-block btn btn-sm">Eliminar</a>
                         </td>
                     </tr>

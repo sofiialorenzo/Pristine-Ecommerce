@@ -6,8 +6,7 @@
             <label for="username" class="form-label">Nombre de Usuario</label>
             <input class="form-control" type="text" name="email">
             <label for="pass" class="form-label">Contraseña</label>
-
-            <input class="form-control" type="text" name="pass">
+            <input class="form-control" type="password" name="pass">
             <button class="btn" type="submit">Login</button>
             <a class="btn" href="index.php?sec=registro">Registrar</a>
         </form>

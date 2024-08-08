@@ -35,8 +35,6 @@ $usuarios = (new Usuario())->catalogo_completo();
                 </tbody>
             </table>
 
-            <a href="index.php?sec=add_marca" class="btn mt-5">Agregar marca</a>
-
         </div>
     </div>
 </div>

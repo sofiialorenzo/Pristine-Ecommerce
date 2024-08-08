@@ -75,8 +75,10 @@ form{
     margin-right: 0;
 }
 
-.form-control,.form-check-input{
+.form-control,.form-check-input,.form-select{
     border: solid 2px #404C2A;
+    border-radius: 3px;
+
 }
 .form-label{
     font-weight: 600;
@@ -114,6 +116,7 @@ form{
     border-radius: 3px;
     width: 100%;
     margin-top: 1rem;
+
 }
 .btn:hover{
     color: #404C2A;
@@ -175,9 +178,8 @@ form{
     color: #404C2A !important;
     border:  solid 2px #404C2A;
 }
-.lista-producto{
-    list-style: none;
-    padding: 0;
+.detalle{
+    padding-left: 0;
 }
 
 
@@ -232,18 +234,21 @@ form{
     padding: 2rem 2rem 2rem 2rem;
     width: 80%;
     background-color: white;
-    border-radius: 6px;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.275);
+    border-radius: 3px;
+    box-shadow: 1px 2px 5px rgba(44, 43, 43, 0.209);
 }
 #containerProducto img{
     margin-right: 4rem;
-    margin-top: 4rem;
+    /* margin-top: 4rem; */
 }
 #contProducto{
     margin-left: 4rem;
 }
 #descripcion{
-    margin-top: -2rem;
+    margin-top: 2rem;
+}
+#descripcion p {
+    font-size: 16px;
 }
 #parrafo404{
     padding-bottom: 18rem;
@@ -282,6 +287,10 @@ line-height: 2em;
 }
 #logoCart{
     font-size: 28px;
+}
+#btn-detalle{
+    font-weight: 500;
+    border-radius: 3px;
 }
 
 

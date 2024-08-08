@@ -22,7 +22,7 @@ $producto = (new Producto())->catalogo_x_id($_GET["id"]);
                     <select class="form-select" name="categoria_id" id="categoria_id">
                         <option value="" selected disabled>Elija una opcion</option>
                         <?php foreach ($categorias as $categoria) { ?>
-                        <option <?= $categoria->getId() == $producto->getCategoria() ? "selected" : "" ?> value="<?= $categoria->getId() ?>"><?= $categoria->getNombreCategoria() ?></option>
+                        <option <?= $categoria->getId() == $producto->getCategoria_id() ? "selected" : "" ?> value="<?= $categoria->getId() ?>"><?= $categoria->getNombreCategoria() ?></option>
                         <?php } ?>
                     </select>
                 </div>
@@ -31,7 +31,7 @@ $producto = (new Producto())->catalogo_x_id($_GET["id"]);
                     <select class="form-select" name="marca_id" id="marca_id">
                         <option value="" selected disabled>Elija una opcion</option>
                         <?php foreach ($marcas as $marca) { ?>
-                        <option <?= $marca->getId() == $producto->getMarcaProducto() ? "selected" : "" ?> value="<?= $marca->getId() ?>"><?= $marca->getMarcaCompleta() ?></option>
+                        <option <?= $marca->getId() == $producto->getMarca_id() ? "selected" : "" ?> value="<?= $marca->getId() ?>"><?= $marca->getMarcaCompleta() ?></option>
                         <?php } ?>
                     </select>
                 </div>

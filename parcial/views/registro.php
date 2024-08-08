@@ -10,7 +10,7 @@
         <label for="nombre" class="form-label">Nombre completo</label>
         <input class="form-control" type="text" name="nombre">
         <label for="pass" class="form-label">Password</label>
-        <input class="form-control" type="text" name="pass">
+        <input class="form-control" type="password" name="pass">
         <button class="btn" type="submit">Registrar</button>
         <a class="btn" href="index.php?sec=login">Login</a>
         </form>

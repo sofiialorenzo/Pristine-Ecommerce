@@ -23,7 +23,7 @@ $items = ($miCarrito)->getCarrito_Usuario();
             <tbody id="tablaCarrito">
                 <?php foreach( $items as $item ) {  ?>
                     <tr>
-                        <td><img class="img-fluid rounded shadow-sm" src="img/productos/<?= $item["imagen"]; ?>" alt="<?= $item["nombreProducto"]; ?>" width="50"></td>
+                        <td><img class="img-fluid rounded shadow-sm" src="img/productos/<?= $item["imagen"]; ?>" alt="<?= $item["nombreProducto"]; ?>" width="100"></td>
                         <td class="align-middle">
                             <p class="h5"><?= $item["nombreProducto"]; ?></p>
                         </td>

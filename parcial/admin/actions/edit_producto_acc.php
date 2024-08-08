@@ -28,11 +28,11 @@ try {
     );
 
     foreach ($categorias as $categoria_id) {
-        (new Producto())->add_talles($_POST["id"], $categoria_id);
+        (new Producto())->add_categorias($_POST["id"], $categoria_id);
     }
 
     (new Alerta())->add_alerta("Se pudo editar", "success");
-    header("Location: ../index.php?sec=admin_comics");
+    header("Location: ../index.php?sec=admin_productos");
 } catch (Exception $e) {
     echo $e->getMessage();
     (new Alerta())->add_alerta("Se no pudo editar", "danger");
