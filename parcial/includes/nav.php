@@ -66,7 +66,7 @@ $categorias_id = ( new Producto())->categorias_validas();
                 <p><strong>Email:</strong> <?= $_SESSION["login"]['email']; ?></p>
                 
                 <?php
-                // Cargar las compras del usuario
+                
                 $usuario_id = $_SESSION['login']['id'];
                 $conexion = Conexion::getConexion();
                 $query = "SELECT * FROM carrito WHERE usuario_id = :usuario_id";

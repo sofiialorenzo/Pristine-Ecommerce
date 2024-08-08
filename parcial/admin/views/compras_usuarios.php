@@ -4,7 +4,7 @@ require_once "../functions/autoload.php";
 
 if (!isset($_GET['usuario_id'])) {
     (new Alerta())->add_alerta("ID de usuario no proporcionado", "danger");
-    header("Location: index.php"); // Redirige al panel de control
+    header("Location: index.php");
     exit();
 }
 
