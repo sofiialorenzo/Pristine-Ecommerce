@@ -36,19 +36,19 @@ $categorias_id = ( new Producto())->categorias_validas();
 
     <?php if( isset($_SESSION["login"]) ){ ?>       
                         <li class="nav-item">
-                            <a class="navLinkLogos" href="#" data-bs-toggle="modal" data-bs-target="#userModal"><i class="material-symbols-outlined">person</i>
+                            <a class="navLinkLogos" href="#" data-bs-toggle="modal" data-bs-target="#userModal" id="perfil"><i class="material-symbols-outlined">account_circle</i>
                             </a>
                         </li>    
                     <?php }else{ ?>
                       <li class="nav-item">
-                      <a class="navLinkLogos" href="index.php?sec=login"><i class="material-symbols-outlined outlined">log in/sign in</i>
-                      </a>
+                      <a class="navLinkLogos" href="index.php?sec=login" id="login"><i class="material-symbols-outlined">person</i></a>
                       </li>  
                     <?php } ?> 
                 
         <li class="nav-item">
           <a class="navLinkLogos" href="index.php?sec=carrito"><i class="material-symbols-outlined" id="logoCart">shopping_basket</i></a>
         </li>
+        </ul>
     </div>
   </div>
 </nav>

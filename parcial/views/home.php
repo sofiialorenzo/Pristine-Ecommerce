@@ -24,9 +24,9 @@ $productosMasVendidos = (new Producto())->bestSellers();
 </div>
 
 <div class="container mb-5" id="containerInfo">
-    <div class="row pb-5" id="container1">
+    <div class="row" id="container1">
         <div class="col-md-6">
-            <img src="img/home/mujer_home.jpg" alt="Mujer aplicando un hidratante" class="img-fluid mb-4 pr-md-3">
+            <img src="img/home/mujer_home.jpeg" alt="Mujer aplicando un hidratante" class="img-fluid pr-md-3">
         </div>
         <div class="col-md-6" id="divInfo">
             <p>¿Por qué Pristine?</p>

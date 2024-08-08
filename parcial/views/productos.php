@@ -18,13 +18,13 @@ $productos = (new Producto())->catalogo_x_categoria($categoriaSeleccionada);
             <p class="card-text"><?= $producto->descripcionCorta() ?></p>
         </div>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">Marca: <?= $producto->getMarcaProducto() ?></li>
-            <li class="list-group-item">Categoria: <?= $producto->getCategoria() ?></li>
-            <li class="list-group-item">Contenido Neto: <?= $producto->getContenidoNeto() ?></li>
+            <li class="list-group-item"><b>Marca:</b> <?= $producto->getMarcaProducto() ?></li>
+            <li class="list-group-item"><b>Categoria:</b> <?= $producto->getCategoria() ?></li>
+            <li class="list-group-item"><b>Contenido Neto:</b> <?= $producto->getContenidoNeto() ?></li>
         </ul>
         <div class="card-body">
-            <div class="fs-3 mb-3 fw-bold text-center">$<?= $producto->getPrecio() ?></div>
-            <a href="index.php?sec=producto&id=<?=$producto->getId()?>" class="btn w-100 fw-bold">COMPRAR</a>
+            <div class="fs-3 mb-3 text-center">$<?= $producto->getPrecio() ?></div>
+            <a href="index.php?sec=producto&id=<?=$producto->getId()?>" class="btn w-100">VER MÁS</a>
         </div>
     </div>
 </div>
