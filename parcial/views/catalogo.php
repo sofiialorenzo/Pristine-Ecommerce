@@ -1,10 +1,20 @@
 <?php
 require_once __DIR__ . "/../functions/autoload.php";
+// $categoriasSecundarias = (new CategoriaSecundaria())->catalogo_completo();
 $productos = ( new Producto() )->catalogo_completo();
+
+// $categorias_seleccionadas = $_GET['categorias'] ?? [];
+
+// if ($categorias_seleccionadas) {
+//     $productos = array_filter($productos, function ($producto) use ($categorias_seleccionadas) {
+//         $productoCategorias = explode(',', $producto->getCategoriasSecundarias());
+//         return in_array($categorias_seleccionadas, $productoCategorias);
+//     }); }
 ?>
 
 <h2 class="text-center my-5 fs-sm-4">Cuidado de la piel</h2>
-    <div class="container" id="containerCard">
+
+<div class="container" id="containerCard">
     <div class="row">
 <?php foreach($productos as $producto) { ?>
 
@@ -19,6 +29,9 @@ $productos = ( new Producto() )->catalogo_completo();
         <li class="list-group-item">Marca: <?= $producto->getMarcaProducto() ?></li>
         <li class="list-group-item">Categoria: <?= $producto->getCategoria() ?></li>
         <li class="list-group-item">Contenido Neto: <?= $producto->getContenidoNeto() ?></li>
+        <li class="list-group-item">Categorías Secundarias: <?= implode(', ', array_map(function ($categoria) {
+                                return $categoria->getNombre();
+                            }, $producto->getCategorias_id())) ?></li>
         </ul>
         <div class="card-body">
             <div class="fs-3 mb-3 fw-bold text-center">$<?= $producto->getPrecio() ?></div>

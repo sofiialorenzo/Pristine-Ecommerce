@@ -173,6 +173,17 @@ form{
     color: #404C2A !important;
     border:  solid 2px #404C2A;
 }
+.category-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+}
+.category-btns .btn {
+    flex: 0 1 auto;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+}
 
 #container1{
     display: flex;

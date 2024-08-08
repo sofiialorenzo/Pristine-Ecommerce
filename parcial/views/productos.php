@@ -2,7 +2,6 @@
 require_once __DIR__ . "/../functions/autoload.php";
 $categoriaSeleccionada = $_GET['categoria'];
 $productos = (new Producto())->catalogo_x_categoria($categoriaSeleccionada);
-
 ?>
 
 <h2 class="text-center my-5 fs-sm-4"> <?= $productos[0]->modificacionTitulo() ?> </h2>
@@ -22,7 +21,6 @@ $productos = (new Producto())->catalogo_x_categoria($categoriaSeleccionada);
             <li class="list-group-item">Marca: <?= $producto->getMarcaProducto() ?></li>
             <li class="list-group-item">Categoria: <?= $producto->getCategoria() ?></li>
             <li class="list-group-item">Contenido Neto: <?= $producto->getContenidoNeto() ?></li>
-            
         </ul>
         <div class="card-body">
             <div class="fs-3 mb-3 fw-bold text-center">$<?= $producto->getPrecio() ?></div>
