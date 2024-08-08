@@ -232,25 +232,6 @@ public function mapearCat($productoArrayAsociativo) : self {
         ]);
       }
 
-      public function filtrarPorCategoriasSecundarias(array $categoria_id) {
-        $catalogo = [];
-        $conexion = Conexion::getConexion();
-        
-        $ids = implode(',', $categoria_id);
-        $query = "SELECT productos.*, GROUP_CONCAT(productos_categorias.categoria_id) AS categorias_secundarias FROM productos LEFT JOIN productos_categorias ON productos.id = productos_categorias.producto_id WHERE productos_categorias.categoria_id IN ($ids)
-        GROUP BY productos.id";
-
-        $PDOStatement = $conexion->prepare($query);
-        $PDOStatement->setFetchMode(PDO::FETCH_ASSOC);
-        $PDOStatement->execute();
-        while($producto = $PDOStatement->fetch()){
-            $catalogo[] = $this->mapear($producto);
-        }
-        
-        return $catalogo;
-    }
-
-
     public function getId(){
         return $this->id;
     }
