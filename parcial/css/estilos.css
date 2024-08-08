@@ -130,20 +130,20 @@ form{
 .navLinkLogos span {
     width: 60px;
 }
-.material-symbols-outlined:hover {
+.navLinkLogos .material-symbols-outlined:hover {
   font-variation-settings:
   'FILL' 1,
   'wght' 200,
   'GRAD' 0,
   'opsz' 24
 }
-.material-symbols-outlined {
+.navLinkLogos .material-symbols-outlined {
     font-size: 30px; 
     color: black; 
     font-weight: 200;
     margin-right: 10px;
 }
-.material-symbols-outlined:hover {
+.navLinkLogos .material-symbols-outlined:hover {
     color: #404C2A;
 }
 .table-responsive {
@@ -181,14 +181,33 @@ form{
 .detalle{
     padding-left: 0;
 }
-
-
+.detalles span{
+display: flex;
+justify-content: center;
+}
+.detalles p{
+    text-align: center;
+    font-size: 18px;
+}
+.detalles-icon{
+    font-size: 60px;
+    color: #404C2A; 
+    font-weight: 200;
+}
+#containerInfo img{
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
 #container1{
     display: flex;
     align-items: center;
-    margin-top: 9rem;
+    margin-top: 15rem;
     padding-bottom: -3rem;
-    background-color: #404C2A;
+    padding-bottom: 0;
+    border-radius: 3px;
+}
+#foto_skincare.col-md-6{
+    padding-right: 0;
 }
 #botonesCarrito{
     padding-bottom: 10rem;
@@ -213,8 +232,8 @@ form{
     margin: 0 auto;
     padding-bottom: 5rem;
 }
-#containerInfo img{
-    border-radius: 8px;
+#foto_skincare{
+    padding-left: 0;
 }
 #containerBanner{
     padding-top: 1.5rem;
@@ -278,8 +297,9 @@ font-size: 1.5rem;
 margin-top: 3rem;
 line-height: 2em;
 }
-#divInfo{
+#divInfo p, h2{
     margin-top: 2em;
+    margin-left: 3rem;
 }
 #containerNav{
     padding-top: 5px;
@@ -291,6 +311,19 @@ line-height: 2em;
 #btn-detalle{
     font-weight: 500;
     border-radius: 3px;
+}
+#container2{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15rem;
+    padding-bottom: -3rem;
+}
+#container3{
+    margin-top: 10rem;
+    padding-bottom: -3rem;
+}
+#divNews h2{
+    text-align: center;
 }
 
 

@@ -26,9 +26,6 @@ $categorias_id = ( new Producto())->categorias_validas();
                             </a>
                         </li>
                     <?php } ?>
-        <li class="nav-item">
-          <a class="navLink" href="index.php?sec=newsletter">Newsletter</a>
-        </li>
       </ul>
     </div>
     <div id="logos">
