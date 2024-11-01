@@ -1,0 +1,5 @@
+Usuario admin (admin)
+Constraseña 123456
+
+Usuario soffilorenzo / sofia.lorenzo@davinci.edu.ar
+Contraseña hola123
