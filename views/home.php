@@ -5,9 +5,9 @@ $productosMasVendidos = (new Producto())->bestSellers();
 <div class="container mx-auto" id="containerBanner">
     <img src="img/home/banner_home.jpg" alt="Banner aplicacion Pristine" class="max-w-full">
 </div>
-
-<div class="container mx-auto mt-10" id="containerBest">
-    <h2 class="text-2xl font-bold mb-6">Bestseller</h2>
+<section>
+<div class="py-20 mx-20" id="containerBest">
+    <h2 class="text-3xl font-bold mb-6 text-center">Bestseller</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <?php foreach($productosMasVendidos as $producto) { ?>
             <div class="productoBestDiv">
@@ -21,12 +21,13 @@ $productosMasVendidos = (new Producto())->bestSellers();
         <?php } ?>
     </div>
 </div>
+</section>
 
-<section class="flex justify-center items-center gap-8 mx-20 my-20 md:flex-row flex-col" id="containerInfo">
-  <figure class="md:w-3/4 w-full">
+<section class="flex justify-center items-center gap-8 mx-20 py-20 md:flex-row flex-col" id="containerInfo">
+  <figure class="md:w-1/2 w-full">
     <img src="img/home/mujer_home.jpeg" alt="Mujer" class="rounded">
   </figure>
-  <article class="">
+  <article class="w-3/4">
   <h2 class="text-lg font-semibold pb-0">¿Por qué Pristine?</h2>
   <p class="text-3xl font-bold" id="tituloContenido1">En Pristine, nos complace ofrecer una variedad excepcional de productos de cuidado de la piel de alta calidad, seleccionados de las marcas más prestigiosas del mundo.</p>
   </article>
@@ -34,7 +35,7 @@ $productosMasVendidos = (new Producto())->bestSellers();
 
 <section class="py-20">
   <h2 class="text-center font-bold text-3xl">Nuestros servicios</h2>
-  <div class="grid md:grid-cols-3 gap-20 mt-10 w-full md:w-4/5 grid-cols-1 mx-auto">
+  <div class="grid md:grid-cols-3 gap-20 mt-10 mx-20 w-full md:w-4/5 grid-cols-1 mx-auto">
     <div class="detalles">
     <span class="material-symbols-outlined text-4xl detalles-icon">shopping_cart</span>
     <article class="text-center mt-5">
@@ -59,8 +60,8 @@ $productosMasVendidos = (new Producto())->bestSellers();
   </div>
 
 </section>
-
-<div class="mx-20 my-20" id="containerNews">
+<section class="py-20">
+<div class="mx-20" id="containerNews">
     <div class="grid" id="container3">
         <div id="divNews">
             <h2 class="text-2xl font-bold mb-6">¿Quieres estar al día con nuestras últimas novedades? ¡Suscríbete a nuestro Newsletter!</h2>
@@ -86,25 +87,4 @@ $productosMasVendidos = (new Producto())->bestSellers();
         </div>
     </div>   
 </div>
-
-
-<div class="container mx-auto" id="containerAlumna">
-  <div class="grid md:grid-cols-2 gap-6">
-    <div>
-    <picture>
-          <source srcset="./img/Sofia_Lorenzo.jpeg" type="image/svg+xml">
-          <img src="./img/Sofia_Lorenzo.jpeg" class="w-full h-auto" alt="Sofía Lorenzo">
-        </picture>
-    </div>
-    <div>
-      <ul class="list-none p-0">
-      <li class="py-2 text-lg font-medium">Sofía Lorenzo</li>
-      <li class="py-2 text-lg">20 años</li>
-      <li class="py-2 text-lg">sofia.lorenzo@davinci.edu.ar</li>
-      </ul>
-    </div>
-  </div>
-</div>
-        </div>
-    </div>   
-</div>
+</section>

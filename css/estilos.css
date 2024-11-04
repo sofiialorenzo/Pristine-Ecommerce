@@ -218,9 +218,6 @@ justify-content: center;
 #containerCat{
     margin-top: 7rem;
 }
-#containerBest{
-    padding-top: 3rem;
-}
 #divDescripcion{
     margin-top: 10rem;
 }
@@ -241,7 +238,6 @@ justify-content: center;
     max-width: 100%;
 }
 #containerBanner img{
-    border-radius: 6px;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.243);
 }
 #containerCard{
@@ -275,9 +271,6 @@ justify-content: center;
 #containerAlumna{
     padding-bottom: 5rem;
     width: 70%;
-}
-#containerAlumna li{
-    background-color: #fefffa;
 }
 
 #containerFooter h3{
