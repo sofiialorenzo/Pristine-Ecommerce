@@ -5,8 +5,8 @@ $categorias_id = ( new Producto())->categorias_validas();
 <div class="sticky top-0 bg-white">
   <nav class="max-w-screen-xl flex items-center justify-between mx-auto p-4">
     <a href="#" class="flex items-center space-x-3">
-      <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
-      <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+      <img src="img/nav/logo-pristine.svg" class="h-8" alt="PRISTINE logo" />
+      <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">PRISTINE</span>
     </a>
     <button data-collapse-toggle="navbar-default" type="button"
       class="inline-flex items-center p-2 w-10 h-10 justify-center text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
@@ -20,14 +20,14 @@ $categorias_id = ( new Producto())->categorias_validas();
     <div class="hidden md:flex md:space-x-8" id="navbar-default">
       <ul class="flex flex-col md:flex-row p-4 md:p-0 space-y-4 md:space-y-0 md:space-x-8">
         <li>
-          <a class="block py-2 px-3 text-gray-900" href="index.php?sec=home">Home</a>
+          <a class="block pt-2 pb-px px-3 text-gray-900 hover:border-b-2 hover:border-violet-900 hover:font-semibold hover:text-violet-900" href="index.php?sec=home">Home</a>
         </li>
         <li>
-          <a class="block py-2 px-3 text-gray-900" href="index.php?sec=catalogo">Catalogo</a>
+          <a class="block pt-2 pb-px px-3 text-gray-900 hover:border-b-2 hover:border-violet-900 hover:font-semibold hover:text-violet-900" href="index.php?sec=catalogo">Catalogo</a>
         </li>
         <?php foreach ($categorias_id as $categoria) { ?>
         <li>
-          <a class="block py-2 px-3 text-gray-900" href="index.php?sec=productos&categoria=<?= $categoria['categoria_id'] ?>">
+          <a class="block pt-2 pb-px px-3 text-gray-900 hover:border-b-2 hover:border-violet-900 hover:font-semibold hover:text-violet-900" href="index.php?sec=productos&categoria=<?= $categoria['categoria_id'] ?>">
             <?= $categoria['categoria'] ?>
           </a>
         </li>
@@ -35,15 +35,15 @@ $categorias_id = ( new Producto())->categorias_validas();
 
         <?php if( isset($_SESSION["login"]) ){ ?>       
         <li>
-          <button type="button" data-modal-target="userModal" data-modal-toggle="userModal" class="navLinkLogos block"><i class="material-symbols-outlined block py-2 px-3 md:p-0">account_circle</i></button>
+          <button type="button" data-modal-target="userModal" data-modal-toggle="userModal" class="navLinkLogos block"><i class="material-symbols-outlined block pt-2 pb-px px-3 md:p-0">account_circle</i></button>
         </li>    
         <?php }else{ ?>
         <li>
-          <a class="navLinkLogos" href="index.php?sec=login"><i class="material-symbols-outlined block py-2 px-3 md:p-0">person</i></a>
+          <a class="navLinkLogos" href="index.php?sec=login"><i class="material-symbols-outlined block pt-2 pb-px px-3 md:p-0">person</i></a>
         </li>  
         <?php } ?> 
         <li>
-          <a class="navLinkLogos" href="index.php?sec=carrito"><i class="material-symbols-outlined block py-2 px-3 md:p-0" id="logoCart">shopping_basket</i></a>
+          <a class="navLinkLogos" href="index.php?sec=carrito"><i class="material-symbols-outlined block pt-2 pb-px px-3 md:p-0" id="logoCart">shopping_basket</i></a>
         </li>
       </ul>
     </div>

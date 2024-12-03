@@ -1,14 +1,7 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-
-/* font-family: "Cormorant Garamond", serif;
-  font-weight: 400;
-  font-style: normal; */
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 *{
-    font-family: "Rubik", sans-serif;
+    font-family: "Inter", sans-serif;
     font-weight: 400;
     font-style: normal;
     color: black;
@@ -17,28 +10,9 @@
 body{
     background-color: #fefffa;
 }
-.navbar-brand {
-    background: url(../img/nav/Logo_Pristine.png) no-repeat center center;
-    width: 150px;
-    height: 30px;
-    display: inline-block;
-    text-indent: -9999px;
-    overflow: hidden;
-    margin-left: 1rem;
-}
 nav.navbar button span {
     text-indent: -9999px;
     overflow: hidden;
-}
-a.navLink{
-    color: black;
-    margin-right: 20px;
-    text-decoration: none;
-    padding: 4px;
-}
-a.navLink:hover {
-    border-radius: 8px;
-    border: solid 2px #404C2A;
 }
 nav {
     background-color: #ffffff !important;
@@ -144,7 +118,7 @@ form{
     margin-right: 10px;
 }
 .navLinkLogos .material-symbols-outlined:hover {
-    color: #404C2A;
+    color: #4C1D95;
 }
 .table-responsive {
     overflow-x: auto;
