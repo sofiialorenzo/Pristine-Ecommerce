@@ -2,9 +2,21 @@
 require_once __DIR__ . "/../functions/autoload.php";
 $productosMasVendidos = (new Producto())->bestSellers();
 ?>
-<div class="container mx-auto" id="containerBanner">
-    <img src="img/home/banner_home.jpg" alt="Banner aplicacion Pristine" class="max-w-full">
-</div>
+<section>
+<div class="relative">
+    <figure>
+        <video class="w-full h-screen object-cover" autoplay muted loop>
+            <source src="img/videos/banner-pristine.mp4" type="video/mp4">
+        </video>
+    </figure>
+    <div class="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-50 text-white">
+        <h1 class="text-4xl md:text-5xl font-bold text-white">Calidad en cuidado de la piel</h1>
+        <p class="mt-2 text-lg md:text-xl text-white">Explora una amplia variedad de productos diseñados para cada tipo de piel y necesidad. Todo en un solo lugar.</p>
+        <a href="index.php?sec=catalogo" class="mt-8 bg-violet-900 hover:bg-violet-950 text-white py-3 px-6 rounded-lg font-semibold">Explorar productos</a>
+    </div>
+    </div>
+</section>
+
 <section>
 <div class="py-20 mx-20" id="containerBest">
     <h2 class="text-3xl font-bold mb-6 text-center">Bestseller</h2>
