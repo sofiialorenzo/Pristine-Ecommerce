@@ -11,43 +11,59 @@ $productosMasVendidos = (new Producto())->bestSellers();
     </figure>
     <div class="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-50 text-white">
         <h1 class="text-4xl md:text-5xl font-bold text-white">Calidad en cuidado de la piel</h1>
-        <p class="mt-2 text-lg md:text-xl text-white">Explora una amplia variedad de productos diseñados para cada tipo de piel y necesidad. Todo en un solo lugar.</p>
-        <a href="index.php?sec=catalogo" class="mt-8 bg-violet-900 hover:bg-violet-950 text-white py-3 px-6 rounded-lg font-semibold">Explorar productos</a>
+        <p class="mt-4 text-lg md:text-xl text-white">Explora una amplia variedad de productos diseñados para cada tipo de piel y necesidad. Todo en un solo lugar.</p>
+        <a href="index.php?sec=catalogo" class="mt-8 bg-violet-900 hover:bg-transparent hover:border-4 hover:border-violet-950 text-white py-3 px-6 rounded-lg font-semibold">Explorar productos</a>
     </div>
     </div>
 </section>
 
-<section>
-<div class="py-20 mx-20" id="containerBest">
-    <h2 class="text-3xl font-bold mb-6 text-center">Bestseller</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <?php foreach($productosMasVendidos as $producto) { ?>
-            <div class="productoBestDiv">
-                <a href="index.php?sec=producto&id=<?=$producto->getId()?>">
-                    <img class="w-full h-auto object-cover" src="img/productos/<?= $producto->getImagen() ?>" alt="<?= $producto->getnombreProducto() ?>">
-                </a>
-                <div class="mt-3">
-                    <h3 class="text-lg font-bold text-center"><?= $producto->getnombreProducto() ?></h3>
-                </div>
-            </div>
-        <?php } ?>
+<section class="py-20" id="containerBest">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-3xl font-bold mb-10 text-center text-gray-800">Bestseller</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <?php foreach ($productosMasVendidos as $producto) { ?>
+        <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div class="flex items-center justify-center h-48 bg-white rounded-t-lg">
+            <img 
+              class="max-h-full max-w-full object-contain" 
+              src="img/productos/<?= $producto->getImagen() ?>" 
+              alt="<?= $producto->getnombreProducto() ?>">
+          </div>
+          <div class="p-4 text-center">
+            <h3 class="text-lg font-bold text-gray-900"><?= $producto->getnombreProducto() ?></h3>
+            <a 
+              href="index.php?sec=producto&id=<?= $producto->getId() ?>" 
+              class="mt-4 inline-block px-4 py-2 bg-violet-900 text-white text-sm font-medium rounded-lg hover:bg-transparent hover:text-violet-950 hover:font-semibold hover:border-2 hover:border-violet-950">
+              Ver detalles
+            </a>
+          </div>
+        </div>
+      <?php } ?>
     </div>
-</div>
+  </div>
 </section>
 
-<section class="flex justify-center items-center gap-8 mx-20 py-20 md:flex-row flex-col" id="containerInfo">
-  <figure class="md:w-1/2 w-full">
-    <img src="img/home/mujer_home.jpeg" alt="Mujer" class="rounded">
+<section class="bg-zinc-100 inner-shadow">
+<div class="flex justify-center items-center gap-8 py-20 md:flex-row flex-col w-full">
+  <figure class="md:w-1/3 w-full flex justify-center">
+    <img 
+      src="img/home/pristine-productos.jpg" 
+      alt="Mujer" 
+      class="rounded-lg shadow-md max-w-[300px] md:max-w-[400px] object-contain">
   </figure>
-  <article class="w-3/4">
-  <h2 class="text-lg font-semibold pb-0">¿Por qué Pristine?</h2>
-  <p class="text-3xl font-bold" id="tituloContenido1">En Pristine, nos complace ofrecer una variedad excepcional de productos de cuidado de la piel de alta calidad, seleccionados de las marcas más prestigiosas del mundo.</p>
+  <article class="md:w-1/2 w-full px-4 md:px-0 text-center md:text-left">
+    <h2 class="text-xl md:text-2xl font-semibold text-violet-900 pb-4">¿Por qué Pristine?</h2>
+    <p class="text-lg md:text-2xl font-bold text-black leading-relaxed">
+      En Pristine, nos complace ofrecer una variedad excepcional de productos de cuidado de la piel de alta calidad, seleccionados de las marcas más prestigiosas del mundo.
+    </p>
   </article>
+  </div>
 </section>
+
 
 <section class="py-20">
   <h2 class="text-center font-bold text-3xl">Nuestros servicios</h2>
-  <div class="grid md:grid-cols-3 gap-20 mt-10 mx-20 w-full md:w-4/5 grid-cols-1 mx-auto">
+  <div class="grid md:grid-cols-3 gap-20 mt-20 w-full md:w-4/5 grid-cols-1 mx-auto">
     <div class="detalles">
     <span class="material-symbols-outlined text-4xl detalles-icon">shopping_cart</span>
     <article class="text-center mt-5">
@@ -72,31 +88,68 @@ $productosMasVendidos = (new Producto())->bestSellers();
   </div>
 
 </section>
-<section class="py-20">
-<div class="mx-20" id="containerNews">
-    <div class="grid" id="container3">
-        <div id="divNews">
-            <h2 class="text-2xl font-bold mb-6">¿Quieres estar al día con nuestras últimas novedades? ¡Suscríbete a nuestro Newsletter!</h2>
-            <form action="views/procesar_newsletter.php" enctype="multipart/form-data" method="POST" class="space-y-6">
-                <div>
-                    <label for="nombre" class="block text-lg font-medium mb-2">Nombre</label>
-                    <input type="text" class="form-input w-full border border-gray-300 rounded-md p-2" id="InputNombre" name="nombre" required>
-                </div>
-                <div>
-                    <label for="apellido" class="block text-lg font-medium mb-2">Apellido</label>
-                    <input type="text" class="form-input w-full border border-gray-300 rounded-md p-2" id="InputApellido" name="apellido" required>
-                </div>
-                <div>
-                    <label for="correo" class="block text-lg font-medium mb-2">Correo Electrónico</label>
-                    <input type="email" class="form-input w-full border border-gray-300 rounded-md p-2" id="InputCorreo" name="correo" required>
-                </div>
-                <div class="flex items-center">
-                    <input type="checkbox" class="form-checkbox mr-2" id="exampleCheck1" required>
-                    <label class="text-lg" for="check">Acepto los términos y condiciones</label>
-                </div>
-                <button type="submit" class="btn bg-blue-600 text-white font-bold py-2 px-4 rounded hover:bg-blue-700">Enviar</button>
-            </form>
-        </div>
-    </div>   
-</div>
+<section class="py-20 bg-zinc-100">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="text-center mb-10">
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-800">
+        ¿Quieres estar al día con nuestras últimas novedades? ¡Suscríbete a nuestro Newsletter!
+      </h2>
+    </div>
+    <form 
+      action="views/procesar_newsletter.php" 
+      enctype="multipart/form-data" 
+      method="POST" 
+      class="space-y-6 bg-white p-8 rounded-lg shadow-md">
+      <!-- Nombre -->
+      <div>
+        <label for="nombre" class="block text-lg font-medium mb-2 text-gray-700">Nombre</label>
+        <input 
+          type="text" 
+          class="form-input w-full border border-gray-300 rounded-md p-3 focus:ring-violet-900 focus:border-violet-900" 
+          id="InputNombre" 
+          name="nombre" 
+          required>
+      </div>
+      
+      <!-- Apellido -->
+      <div>
+        <label for="apellido" class="block text-lg font-medium mb-2 text-gray-700">Apellido</label>
+        <input 
+          type="text" 
+          class="form-input w-full border border-gray-300 rounded-md p-3 focus:ring-violet-900 focus:border-violet-900" 
+          id="InputApellido" 
+          name="apellido" 
+          required>
+      </div>
+      
+      <!-- Correo -->
+      <div>
+        <label for="correo" class="block text-lg font-medium mb-2 text-gray-700">Correo Electrónico</label>
+        <input 
+          type="email" 
+          class="form-input w-full border border-gray-300 rounded-md p-3 focus:ring-violet-900 focus:border-violet-900" 
+          id="InputCorreo" 
+          name="correo" 
+          required>
+      </div>
+      
+      <!-- Términos -->
+      <div class="flex items-center">
+        <input 
+          type="checkbox" 
+          class="form-checkbox mr-2 text-violet-900 focus:ring-violet-900" 
+          id="exampleCheck1" 
+          required>
+        <label for="check" class="text-lg text-gray-700">
+          Acepto los términos y condiciones
+        </label>
+      </div>
+      
+      <button 
+        type="submit" 
+        class="mt-6 bg-violet-900 hover:bg-transparent hover:border-2 hover:border-violet-950 hover:text-violet-950 text-white font-semibold py-3 px-6 rounded-lg">
+        Enviar
+      </button>
+    </form>
+  </div>
 </section>

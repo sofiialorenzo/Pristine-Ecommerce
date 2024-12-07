@@ -33,8 +33,6 @@ p b{
     color: #404C2A;
 }
 h1, h2{
-    padding-bottom: 6rem;
-    padding-top: 1.5rem;
     color: black;
     font-weight: 600;
 }
@@ -165,9 +163,10 @@ justify-content: center;
 }
 .detalles-icon{
     font-size: 60px;
-    color: #404C2A; 
-    font-weight: 200;
+    color:#4C1D95; 
+    font-weight: 300;
 }
+
 #containerInfo img{
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
@@ -205,14 +204,6 @@ justify-content: center;
 }
 #foto_skincare{
     padding-left: 0;
-}
-#containerBanner{
-    padding-top: 1.5rem;
-    padding-bottom: 3rem;
-    max-width: 100%;
-}
-#containerBanner img{
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.243);
 }
 #containerCard{
     padding-bottom: 5rem;
