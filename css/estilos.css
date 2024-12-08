@@ -7,9 +7,6 @@
     color: black;
 }
 
-body{
-    background-color: #fefffa;
-}
 nav.navbar button span {
     text-indent: -9999px;
     overflow: hidden;

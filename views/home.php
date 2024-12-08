@@ -19,7 +19,7 @@ $productosMasVendidos = (new Producto())->bestSellers();
 
 <section class="py-20" id="containerBest">
   <div class="max-w-7xl mx-auto px-6">
-    <h2 class="text-3xl font-bold mb-10 text-center text-gray-800">Bestseller</h2>
+    <h2 class="text-3xl font-bold mb-10 text-center text-gray-900">Bestseller</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
       <?php foreach ($productosMasVendidos as $producto) { ?>
         <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
@@ -43,8 +43,8 @@ $productosMasVendidos = (new Producto())->bestSellers();
   </div>
 </section>
 
-<section class="bg-zinc-100 inner-shadow">
-<div class="flex justify-center items-center gap-8 py-20 md:flex-row flex-col w-full">
+<section class="bg-violet-100 shadow-inner py-20">
+<div class="flex justify-center items-center gap-8 md:flex-row flex-col w-full">
   <figure class="md:w-1/3 w-full flex justify-center">
     <img 
       src="img/home/pristine-productos.jpg" 
@@ -53,7 +53,7 @@ $productosMasVendidos = (new Producto())->bestSellers();
   </figure>
   <article class="md:w-1/2 w-full px-4 md:px-0 text-center md:text-left">
     <h2 class="text-xl md:text-2xl font-semibold text-violet-900 pb-4">¿Por qué Pristine?</h2>
-    <p class="text-lg md:text-2xl font-bold text-black leading-relaxed">
+    <p class="text-lg md:text-2xl font-bold text-gray-900 leading-relaxed">
       En Pristine, nos complace ofrecer una variedad excepcional de productos de cuidado de la piel de alta calidad, seleccionados de las marcas más prestigiosas del mundo.
     </p>
   </article>
@@ -67,31 +67,31 @@ $productosMasVendidos = (new Producto())->bestSellers();
     <div class="detalles">
     <span class="material-symbols-outlined text-4xl detalles-icon">shopping_cart</span>
     <article class="text-center mt-5">
-    <p class="text-sm text-balance mt-2">Ten el control de tu compra desde que la realizas hasta que la tienes en tus manos.</p>
+    <p class="text-sm text-balance mt-2 text-gray-900">Ten el control de tu compra desde que la realizas hasta que la tienes en tus manos.</p>
     </article>
     </div>
 
     <div class="detalles">
     <span class="material-symbols-outlined text-4xl detalles-icon">done_all</span>
     <article class="text-center mt-5">
-    <p class="text-sm text-balance mt-2">Estamos contigo desde el momento en que haces tu compra hasta que recibes el producto. Si no cumple con tus expectativas, te devolvemos el dinero.</p>
+    <p class="text-sm text-balance mt-2 text-gray-900">Estamos contigo desde el momento en que haces tu compra hasta que recibes el producto. Si no cumple con tus expectativas, te devolvemos el dinero.</p>
     </article>
     </div>
 
     <div class="detalles">
     <span class="material-symbols-outlined text-4xl detalles-icon">shoppingmode</span>
     <article class="text-center mt-5">
-    <p class="text-sm text-balance mt-2">Encuentra las mejores promociones y novedades especialmente creadas para ti.</p>
+    <p class="text-sm text-balance mt-2 text-gray-900">Encuentra las mejores promociones y novedades especialmente creadas para ti.</p>
     </article>
     </div>
 
   </div>
 
 </section>
-<section class="py-20 bg-zinc-100">
+<section class="py-20 bg-violet-100 shadow-inner">
   <div class="max-w-5xl mx-auto px-6">
     <div class="text-center mb-10">
-      <h2 class="text-2xl md:text-3xl font-bold text-gray-800">
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900">
         ¿Quieres estar al día con nuestras últimas novedades? ¡Suscríbete a nuestro Newsletter!
       </h2>
     </div>
@@ -100,9 +100,8 @@ $productosMasVendidos = (new Producto())->bestSellers();
       enctype="multipart/form-data" 
       method="POST" 
       class="space-y-6 bg-white p-8 rounded-lg shadow-md">
-      <!-- Nombre -->
       <div>
-        <label for="nombre" class="block text-lg font-medium mb-2 text-gray-700">Nombre</label>
+        <label for="nombre" class="block text-lg font-medium mb-2 text-gray-800">Nombre</label>
         <input 
           type="text" 
           class="form-input w-full border border-gray-300 rounded-md p-3 focus:ring-violet-900 focus:border-violet-900" 
@@ -111,9 +110,8 @@ $productosMasVendidos = (new Producto())->bestSellers();
           required>
       </div>
       
-      <!-- Apellido -->
       <div>
-        <label for="apellido" class="block text-lg font-medium mb-2 text-gray-700">Apellido</label>
+        <label for="apellido" class="block text-lg font-medium mb-2 text-gray-800">Apellido</label>
         <input 
           type="text" 
           class="form-input w-full border border-gray-300 rounded-md p-3 focus:ring-violet-900 focus:border-violet-900" 
@@ -122,9 +120,8 @@ $productosMasVendidos = (new Producto())->bestSellers();
           required>
       </div>
       
-      <!-- Correo -->
       <div>
-        <label for="correo" class="block text-lg font-medium mb-2 text-gray-700">Correo Electrónico</label>
+        <label for="correo" class="block text-lg font-medium mb-2 text-gray-800">Correo Electrónico</label>
         <input 
           type="email" 
           class="form-input w-full border border-gray-300 rounded-md p-3 focus:ring-violet-900 focus:border-violet-900" 
@@ -133,14 +130,13 @@ $productosMasVendidos = (new Producto())->bestSellers();
           required>
       </div>
       
-      <!-- Términos -->
       <div class="flex items-center">
         <input 
           type="checkbox" 
           class="form-checkbox mr-2 text-violet-900 focus:ring-violet-900" 
           id="exampleCheck1" 
           required>
-        <label for="check" class="text-lg text-gray-700">
+        <label for="check" class="text-lg text-gray-800">
           Acepto los términos y condiciones
         </label>
       </div>

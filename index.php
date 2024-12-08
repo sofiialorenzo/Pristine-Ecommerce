@@ -61,7 +61,7 @@ if(array_key_exists($view,$secciones)){
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
     <link rel="stylesheet" href="css/estilos.css">
 </head>
-<body>
+<body class="bg-slate-50">
     <?php include_once "includes/nav.php" ?>
 <main class="container-fluid">
     <?php file_exists("views/$vista.php")
