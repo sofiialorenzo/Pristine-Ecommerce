@@ -8,7 +8,7 @@ $categorias_id = ( new Producto())->categorias_validas();
             <div class="mb-6 md:mb-0">
                 <a href="#" class="flex items-center">
                 <img src="img/nav/logo-pristine.svg" class="h-8" alt="PRISTINE logo" />
-                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">PRISTINE</span>
+                <span class="self-center text-2xl font-semibold whitespace-nowrap text-slate-50">PRISTINE</span>
                 </a>
             </div>
 

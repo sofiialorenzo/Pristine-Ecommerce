@@ -15,43 +15,56 @@ foreach ($categorias as $categoria) {
 $categorias_secundarias_texto = implode(', ', $categorias_secundarias_nombres);
 ?>
 
-<div class="container" id="containerProducto">
-<h2 class="text-center"><?= $producto->getnombreProducto() ?></h2>
-    <div class="row">
-        <div class="col">
-        <img class="card-img-top" src="img/productos/<?= $producto->getImagen() ?>">
+<section class="max-w-screen-xl mx-auto p-4 py-20">
+    <h2 class="text-center text-3xl font-bold text-gray-900 mb-10"><?= $producto->getnombreProducto() ?></h2>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div class="flex justify-center">
+            <img 
+                src="img/productos/<?= $producto->getImagen() ?>" 
+                alt="<?= $producto->getnombreProducto() ?>" 
+                class="rounded-lg shadow-lg max-w-full lg:max-w-lg object-contain bg-white"
+            >
         </div>
-        <div class="col" id="contProducto">
-            
-            <div id="descripcion">
-                <p><?= $producto->getDescripcion() ?></p>
-                <ul class="list-group list-group-flush">
-                <li class="list-group-item detalle"><b>Marca:</b> <?= $producto->getMarcaProducto() ?></li>
-                <li class="list-group-item detalle"><b>Contenido Neto:</b> <?= $producto->getContenidoNeto() ?></li>
-                <li class="list-group-item detalle"><b>Categoria:</b> <?= $producto->getCategoria() ?></li>
-                <li class="list-group-item detalle"><b>Propiedades:</b> <?= $categorias_secundarias_texto ?></li>
-               
-                </ul>
+        <div>
+            <div class="mb-6">
+                <p class="text-gray-700 leading-relaxed"><?= $producto->getDescripcion() ?></p>
             </div>
-            <div>
-            <div class="fs-3 mt-2 mb-3" id="precio">$<?= $producto->getPrecio() ?></div>
+            <ul class="divide-y divide-gray-200 mb-6">
+                <li class="py-2"><b>Marca:</b> <?= $producto->getMarcaProducto() ?></li>
+                <li class="py-2"><b>Contenido Neto:</b> <?= $producto->getContenidoNeto() ?></li>
+                <li class="py-2"><b>Categoría:</b> <?= $producto->getCategoria() ?></li>
+                <li class="py-2"><b>Propiedades:</b> <?= $categorias_secundarias_texto ?></li>
+            </ul>
+            <div class="text-2xl font-bold text-gray-900 mb-4">$<?= $producto->getPrecio() ?></div>
+
             <form action="admin/actions/add_item_acc.php" method="get">
-                <div>
-                <label for="" class="form-label">Cantidad:</label>
-                <input type="number" name="c" id="c" value="1" class="form-control">
+                <div class="mb-4">
+                    <label for="c" class="block text-gray-700 font-medium mb-2">Cantidad:</label>
+                    <input 
+                        type="number" 
+                        name="c" 
+                        id="c" 
+                        value="1" 
+                        class="form-input w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-violet-500 focus:outline-none"
+                    >
                 </div>
                 <div>
                     <?php if (isset($_SESSION["login"])) { ?>
-                        <input type="submit" value="Agregar al carrito" class="btn" id="btn-detalle">
-                    <?php } else{ ?>
-                        <a href="index.php?sec=login" class="btn">Agregar al carrito</a>
+                        <button 
+                            type="submit" 
+                            class="w-full bg-violet-900 text-white font-semibold py-3 px-6 rounded-lg hover:bg-transparent hover:border-2 hover:border-violet-900 hover:text-violet-900 transition">
+                            Agregar al carrito
+                        </button>
+                    <?php } else { ?>
+                        <a 
+                            href="index.php?sec=login" 
+                            class="w-full block text-center bg-violet-900 text-white font-semibold py-3 px-6 rounded-lg hover:bg-transparent hover:border-2 hover:border-violet-900 hover:text-violet-900 transition">
+                            Agregar al carrito
+                        </a>
                     <?php } ?>
                     <input type="hidden" name="id" value="<?= $producto->getId() ?>">
                 </div>
-                                
-                                
-                            </form>
-        </div>
+            </form>
         </div>
     </div>
-</div>
+</section>

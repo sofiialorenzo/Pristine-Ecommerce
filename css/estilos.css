@@ -78,21 +78,6 @@ form{
 .col img{
     border-radius: 6px;
 }
-.btn {
-    letter-spacing: 1px;
-    background-color: #404C2A;
-    color: #FAFFED;
-    border-radius: 3px;
-    width: 100%;
-    margin-top: 1rem;
-
-}
-.btn:hover{
-    color: #404C2A;
-    background-color: #FAFFED;
-    border: solid 2px #404C2A;
-    font-weight: 600;
-}
 .navbar-collapse{
     flex-grow: 0;
 }
@@ -204,22 +189,6 @@ justify-content: center;
 }
 #containerCard{
     padding-bottom: 5rem;
-}
-#containerProducto{
-    margin-top: 5rem;
-    margin-bottom: 5rem;
-    padding: 2rem 2rem 2rem 2rem;
-    width: 80%;
-    background-color: white;
-    border-radius: 3px;
-    box-shadow: 1px 2px 5px rgba(44, 43, 43, 0.209);
-}
-#containerProducto img{
-    margin-right: 4rem;
-    /* margin-top: 4rem; */
-}
-#contProducto{
-    margin-left: 4rem;
 }
 #descripcion{
     margin-top: 2rem;
