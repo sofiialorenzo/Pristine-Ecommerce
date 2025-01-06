@@ -17,9 +17,43 @@ $productosMasVendidos = (new Producto())->bestSellers();
     </div>
 </section>
 
-<section class="py-20" id="containerBest">
-  <div class="max-w-7xl mx-auto px-6">
-    <h2 class="text-3xl font-bold mb-10 text-center text-gray-900">Bestseller</h2>
+<section class="py-28">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 items-center gap-12">
+    <article class="w-full text-center md:text-left">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-violet-900 mb-6">
+        ¿Por qué elegir Pristine?
+      </h2>
+      <p class="text-lg md:text-xl text-gray-800 leading-relaxed mb-6">
+        En Pristine, te ofrecemos una selección única de productos de cuidado de la piel que combinan 
+        <span class="font-semibold text-violet-900">calidad</span>, 
+        <span class="font-semibold text-violet-900">innovación</span>, y los 
+        <span class="font-semibold text-violet-900">mejores ingredientes</span>, avalados por las marcas más prestigiosas del mundo.
+      </p>
+      <ul class="list-none space-y-3 text-lg">
+        <li class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-violet-900">verified</span>
+          Productos dermatológicamente probados.
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-violet-900">emoji_events</span>
+          Reconocidos internacionalmente por su calidad.
+        </li>
+      </ul>
+    </article>
+    <figure class="flex justify-center md:justify-end">
+      <img 
+        src="img/home/pristine-productos.jpg" 
+        alt="Productos Pristine" 
+        class="rounded-lg object-cover shadow-lg w-full md:w-2/3 max-h-96"
+      >
+    </figure>
+  </div>
+</section>
+
+
+<section class="py-28 bg-violet-50 shadow-inner">
+<div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-3xl font-bold mb-16 text-center text-gray-900">Productos bestseller</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
       <?php foreach ($productosMasVendidos as $producto) { ?>
         <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
@@ -43,26 +77,8 @@ $productosMasVendidos = (new Producto())->bestSellers();
   </div>
 </section>
 
-<section class="bg-violet-100 shadow-inner py-20">
-<div class="flex justify-center items-center gap-8 md:flex-row flex-col w-full">
-  <figure class="md:w-1/3 w-full flex justify-center">
-    <img 
-      src="img/home/pristine-productos.jpg" 
-      alt="Mujer" 
-      class="rounded-lg shadow-md max-w-[300px] md:max-w-[400px] object-contain">
-  </figure>
-  <article class="md:w-1/2 w-full px-4 md:px-0 text-center md:text-left">
-    <h2 class="text-xl md:text-2xl font-semibold text-violet-900 pb-4">¿Por qué Pristine?</h2>
-    <p class="text-lg md:text-2xl font-bold text-gray-900 leading-relaxed">
-      En Pristine, nos complace ofrecer una variedad excepcional de productos de cuidado de la piel de alta calidad, seleccionados de las marcas más prestigiosas del mundo.
-    </p>
-  </article>
-  </div>
-</section>
-
-
-<section class="py-20">
-  <h2 class="text-center font-bold text-3xl">Nuestros servicios</h2>
+<section class="py-28">
+  <h2 class="text-center font-bold text-3xl mb-16">Nuestros servicios</h2>
   <div class="grid md:grid-cols-3 gap-20 mt-20 w-full md:w-4/5 grid-cols-1 mx-auto">
     <div class="detalles">
     <span class="material-symbols-outlined text-4xl detalles-icon">shopping_cart</span>
@@ -86,12 +102,12 @@ $productosMasVendidos = (new Producto())->bestSellers();
     </div>
 
   </div>
-
 </section>
-<section class="py-20 bg-violet-100 shadow-inner">
+
+<section class="py-28 bg-violet-100 shadow-inner">
   <div class="max-w-5xl mx-auto px-6">
-    <div class="text-center mb-10">
-      <h2 class="text-2xl md:text-3xl font-bold text-gray-900">
+    <div class="text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-16">
         ¿Quieres estar al día con nuestras últimas novedades? ¡Suscríbete a nuestro Newsletter!
       </h2>
     </div>

@@ -12,39 +12,40 @@ if ($categorias_seleccionadas) {
     });
 }
 ?>
-<section class="py-20 mx-24">
-<h2 class="text-center mt-5 mb-16 text-3xl font-bold text-gray-900">Cuidado de la piel</h2>
-
-<div class="container mx-auto px-4" id="containerCard">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <?php foreach ($productos as $producto) { ?>
-            <div class="bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden">
-                <div class="w-full aspect-w-16 aspect-h-9">
-                    <img 
-                        class="w-full h-full object-contain" 
-                        src="img/productos/<?= $producto->getImagen() ?>" 
-                        alt="<?= $producto->getnombreProducto() ?>"
-                    >
-                </div>
-                <div class="p-5">
-                    <h3 class="text-lg font-semibold text-gray-900"><?= $producto->getnombreProducto() ?></h3>
-                    <p class="text-sm text-gray-700 mt-2"><?= $producto->descripcionCorta() ?></p>
-                </div>
-                <ul class="divide-y divide-gray-200">
-                    <li class="px-4 py-2"><b>Marca:</b> <?= $producto->getMarcaProducto() ?></li>
-                    <li class="px-4 py-2"><b>Categoría:</b> <?= $producto->getCategoria() ?></li>
-                    <li class="px-4 py-2"><b>Contenido Neto:</b> <?= $producto->getContenidoNeto() ?></li>
-                    <li class="px-4 py-2"><b>Propiedades:</b> <?= implode(', ', array_map(function ($categoria) {
-                        return $categoria->getNombre();
-                    }, $producto->getCategorias_id())) ?></li>
-                </ul>
-                <div class="p-8 text-center">
-                    <div class="text-2xl font-bold text-gray-900 mb-6">$<?= $producto->getPrecio() ?></div>
-                    <a href="index.php?sec=producto&id=<?= $producto->getId() ?>" class="w-full text-center mt-6 bg-violet-900 hover:bg-transparent hover:border-2 hover:border-violet-950 hover:text-violet-950 text-white font-semibold py-3 px-6 rounded-lg"> Ver más
-                    </a>
-                </div>
+<section class="py-20 px-4">
+  <div class="text-center mb-12">
+    <h2 class="text-4xl font-bold text-gray-900">Cuidado de la piel</h2>
+    <p class="text-lg text-gray-500 mt-2">Explora nuestra exclusiva selección de productos.</p>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+    <?php if (empty($productos)) { ?>
+      <p class="text-center col-span-full text-gray-700">No hay productos disponibles en este momento.</p>
+    <?php } else { ?>
+      <?php foreach ($productos as $producto) { ?>
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <div class="relative">
+            <img 
+              class="w-full h-48 object-contain" 
+              src="img/productos/<?= $producto->getImagen() ?>" 
+              alt="<?= $producto->getnombreProducto() ?>">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-800"><?= $producto->getnombreProducto() ?></h3>
+            <p class="text-sm text-gray-600 mt-2"><?= $producto->descripcionCorta() ?></p>
+          </div>
+          <div class="border-t border-gray-200">
+            <div class="px-6 py-4 text-lg font-medium text-gray-800">$<?= $producto->getPrecio() ?></div>
+            <div class="px-6 pb-6">
+              <a 
+                href="index.php?sec=producto&id=<?= $producto->getId() ?>" 
+                class="block text-center text-sm font-semibold text-violet-900 hover:text-violet-600 mt-2">
+                Ver más
+              </a>
             </div>
-        <?php } ?>
-    </div>
-</div>
+          </div>
+        </div>
+      <?php } ?>
+    <?php } ?>
+  </div>
 </section>
+
