@@ -25,9 +25,20 @@ class Alerta {
     }
 
     public function print_alerta($alerta){
-        $html = "<div class='alert alert-{$alerta['tipo']} alert-dismissible fade show' role='alert'>";
-        $html .= $alerta['mensaje'];
-        $html .= "<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>";
+        
+        $baseClasses = "p-4 mb-4 rounded-lg shadow-md flex items-start justify-between gap-4";
+        $typeClasses = [
+            'success' => 'bg-green-100 border border-green-400 text-green-700',
+            'error' => 'bg-red-100 border border-red-400 text-red-700',
+            'warning' => 'bg-yellow-100 border border-yellow-400 text-yellow-700',
+            'info' => 'bg-blue-100 border border-blue-400 text-blue-700',
+        ];
+
+        $alertClasses = $typeClasses[$alerta['tipo']] ?? 'bg-gray-100 border border-gray-400 text-gray-700';
+
+        $html = "<div class='{$baseClasses} {$alertClasses}'>";
+        $html .= "<span class='flex-grow'>{$alerta['mensaje']}</span>";
+        $html .= "<button type='button' class='text-gray-500 hover:text-gray-800' onclick='this.parentElement.remove();'>✖</button>";
         $html .= '</div>';
         return $html;
     }

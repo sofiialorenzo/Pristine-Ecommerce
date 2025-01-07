@@ -12,7 +12,7 @@ if ($categorias_seleccionadas) {
     });
 }
 ?>
-<section class="py-20 px-4">
+<section class="py-28 px-4">
   <div class="text-center mb-12">
     <h2 class="text-4xl font-bold text-gray-900">Cuidado de la piel</h2>
     <p class="text-lg text-gray-500 mt-2">Explora nuestra exclusiva selección de productos.</p>
@@ -24,10 +24,12 @@ if ($categorias_seleccionadas) {
       <?php foreach ($productos as $producto) { ?>
         <div class="bg-white rounded-lg shadow-md overflow-hidden">
           <div class="relative">
+            <a href="index.php?sec=producto&id=<?= $producto->getId() ?>">
             <img 
               class="w-full h-48 object-contain" 
               src="img/productos/<?= $producto->getImagen() ?>" 
               alt="<?= $producto->getnombreProducto() ?>">
+              </a>
           </div>
           <div class="p-6">
             <h3 class="text-xl font-semibold text-gray-800"><?= $producto->getnombreProducto() ?></h3>

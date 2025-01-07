@@ -11,3 +11,4 @@ if (!empty($_GET["c"])){
 
 
 header("Location: ../../index.php?sec=carrito");
+exit();

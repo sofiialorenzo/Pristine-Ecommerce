@@ -15,7 +15,7 @@ foreach ($categorias as $categoria) {
 $categorias_secundarias_texto = implode(', ', $categorias_secundarias_nombres);
 ?>
 
-<section class="max-w-screen-xl mx-auto p-4 py-20">
+<section class="max-w-screen-xl mx-auto p-4 py-28">
     <h2 class="text-center text-3xl font-bold text-gray-900 mb-10"><?= $producto->getnombreProducto() ?></h2>
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
         <div class="flex justify-center">
