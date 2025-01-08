@@ -11,11 +11,6 @@ nav.navbar button span {
     text-indent: -9999px;
     overflow: hidden;
 }
-nav {
-    background-color: #ffffff !important;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-}
 footer{
     background-color: #404C2A;
     padding: 2rem;

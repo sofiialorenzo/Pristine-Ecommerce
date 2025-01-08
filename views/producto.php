@@ -16,7 +16,7 @@ $categorias_secundarias_texto = implode(', ', $categorias_secundarias_nombres);
 ?>
 
 <section class="max-w-screen-xl mx-auto p-4 py-28">
-    <h2 class="text-center text-3xl font-bold text-gray-900 mb-10"><?= $producto->getnombreProducto() ?></h2>
+    <h1 class="text-center text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-10"><?= $producto->getnombreProducto() ?></h1>
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
         <div class="flex justify-center">
             <img 
@@ -27,7 +27,7 @@ $categorias_secundarias_texto = implode(', ', $categorias_secundarias_nombres);
         </div>
         <div>
             <div class="mb-6">
-                <p class="text-gray-700 leading-relaxed"><?= $producto->getDescripcion() ?></p>
+                <p class="text-gray-800 leading-relaxed"><?= $producto->getDescripcion() ?></p>
             </div>
             <ul class="divide-y divide-gray-200 mb-6">
                 <li class="py-2"><b>Marca:</b> <?= $producto->getMarcaProducto() ?></li>
@@ -39,7 +39,7 @@ $categorias_secundarias_texto = implode(', ', $categorias_secundarias_nombres);
 
             <form action="admin/actions/add_item_acc.php" method="get">
                 <div class="mb-4">
-                    <label for="c" class="block text-gray-700 font-medium mb-2">Cantidad:</label>
+                    <label for="c" class="block text-gray-800 font-medium mb-2">Cantidad:</label>
                     <input 
                         type="number" 
                         name="c" 

@@ -21,7 +21,7 @@ $correo = $_POST['correo'];
 <div>
 <div class="container" id="containerDatosForm">
     <div>
-        <h2 class="text-center my-5">Envío exitoso!</h2>
+        <h1 class="text-center my-5 text-2xl md:text-3xl lg:text-4xl">Envío exitoso!</h1>
         <p class="text-center my-5">En breve nos pondremos en contacto contigo. <b>Muchas gracias por suscribirte!</b></p>
     </div>
     <div>

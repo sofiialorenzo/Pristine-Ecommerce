@@ -10,9 +10,9 @@ $productosMasVendidos = (new Producto())->bestSellers();
         </video>
     </figure>
     <div class="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-50 text-white">
-        <h1 class="text-4xl md:text-5xl font-bold text-white">Calidad en cuidado de la piel</h1>
-        <p class="mt-4 text-lg md:text-xl text-white">Explora una amplia variedad de productos diseñados para cada tipo de piel y necesidad. Todo en un solo lugar.</p>
-        <a href="index.php?sec=catalogo" class="mt-8 bg-violet-900 hover:bg-transparent hover:border-4 hover:border-violet-950 text-white py-3 px-6 rounded-lg font-semibold">Explorar productos</a>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center mx-2">Calidad en cuidado de la piel</h1>
+        <p class="mt-4 text-base sm:text-lg md:text-xl text-white m-2 text-center">Explora una amplia variedad de productos diseñados para cada tipo de piel y necesidad. Todo en un solo lugar.</p>
+        <a href="index.php?sec=catalogo" class="mt-8 bg-violet-900 hover:bg-transparent hover:border-2 hover:border-violet-950 text-white py-3 px-6 rounded-lg font-semibold">Explorar productos</a>
     </div>
     </div>
 </section>
@@ -20,10 +20,10 @@ $productosMasVendidos = (new Producto())->bestSellers();
 <section class="py-28">
   <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 items-center gap-12">
     <article class="w-full text-center md:text-left">
-      <h2 class="text-3xl md:text-4xl font-extrabold text-violet-900 mb-6">
+      <h2 class="text-2xl md:text-3xl lg:text-4xl font-extrabold text-violet-900 mb-6">
         ¿Por qué elegir Pristine?
       </h2>
-      <p class="text-lg md:text-xl text-gray-800 leading-relaxed mb-6">
+      <p class="text-base sm:text-lg md:text-xl text-gray-800 leading-relaxed mb-6">
         En Pristine, te ofrecemos una selección única de productos de cuidado de la piel que combinan 
         <span class="font-semibold text-violet-900">calidad</span>, 
         <span class="font-semibold text-violet-900">innovación</span>, y los 
@@ -53,7 +53,7 @@ $productosMasVendidos = (new Producto())->bestSellers();
 
 <section class="py-28 bg-violet-50 shadow-inner">
 <div class="max-w-7xl mx-auto px-6">
-    <h2 class="text-3xl font-bold mb-16 text-center text-gray-900">Productos bestseller</h2>
+    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-16 text-center text-gray-900">Productos bestseller</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
       <?php foreach ($productosMasVendidos as $producto) { ?>
         <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
@@ -77,27 +77,27 @@ $productosMasVendidos = (new Producto())->bestSellers();
   </div>
 </section>
 
-<section class="py-28">
-  <h2 class="text-center font-bold text-3xl mb-16">Nuestros servicios</h2>
+<section class="py-28 mx-10">
+  <h2 class="text-center font-bold text-2xl md:text-3xl lg:text-4xl mb-16 text-gray-900">Nuestros servicios</h2>
   <div class="grid md:grid-cols-3 gap-20 mt-20 w-full md:w-4/5 grid-cols-1 mx-auto">
     <div class="detalles">
     <span class="material-symbols-outlined text-4xl detalles-icon">shopping_cart</span>
     <article class="text-center mt-5">
-    <p class="text-sm text-balance mt-2 text-gray-900">Ten el control de tu compra desde que la realizas hasta que la tienes en tus manos.</p>
+    <p class="text-base sm:text-lg md:text-xl text-balance mt-2 text-gray-800">Ten el control de tu compra desde que la realizas hasta que la tienes en tus manos.</p>
     </article>
     </div>
 
     <div class="detalles">
     <span class="material-symbols-outlined text-4xl detalles-icon">done_all</span>
     <article class="text-center mt-5">
-    <p class="text-sm text-balance mt-2 text-gray-900">Estamos contigo desde el momento en que haces tu compra hasta que recibes el producto. Si no cumple con tus expectativas, te devolvemos el dinero.</p>
+    <p class="text-base sm:text-lg md:text-xl text-balance mt-2 text-gray-800">Estamos contigo desde el momento en que haces tu compra hasta que recibes el producto. Si no cumple con tus expectativas, te devolvemos el dinero.</p>
     </article>
     </div>
 
     <div class="detalles">
     <span class="material-symbols-outlined text-4xl detalles-icon">shoppingmode</span>
     <article class="text-center mt-5">
-    <p class="text-sm text-balance mt-2 text-gray-900">Encuentra las mejores promociones y novedades especialmente creadas para ti.</p>
+    <p class="text-sm text-balance mt-2 text-gray-800">Encuentra las mejores promociones y novedades especialmente creadas para ti.</p>
     </article>
     </div>
 
@@ -107,7 +107,7 @@ $productosMasVendidos = (new Producto())->bestSellers();
 <section class="py-28 bg-violet-100 shadow-inner">
   <div class="max-w-5xl mx-auto px-6">
     <div class="text-center">
-      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-16">
+      <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-16">
         ¿Quieres estar al día con nuestras últimas novedades? ¡Suscríbete a nuestro Newsletter!
       </h2>
     </div>

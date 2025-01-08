@@ -7,6 +7,10 @@ class Carrito{
             session_start();
         }
     }
+
+    public function usuarioAutenticado() {
+        return isset($_SESSION['login']['id']);
+    }
     
     // public function add_item(int $producto_id, int $cantidad){
     //     $itemData = (new Producto())->catalogo_x_id($producto_id);
