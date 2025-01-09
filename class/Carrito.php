@@ -121,7 +121,7 @@ class Carrito{
     //         (new Alerta())->add_alerta("Producto eliminado", "success");
 
     //     }else{
-    //         (new Alerta())->add_alerta("No se ha eliminado el producto", "danger");
+    //         (new Alerta())->add_alerta("No se ha eliminado el producto", "error");
     //     }
     // }
 

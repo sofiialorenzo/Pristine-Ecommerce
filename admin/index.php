@@ -115,7 +115,7 @@ if (!array_key_exists($seccion, $secciones_validas)) {
                     </li>
                     <?php } else { ?>
                     <li class="nav-item">
-                        <a class="block pt-2 pb-px px-3 text-gray-900 hover:border-b-2 hover:border-violet-900 hover:font-semibold hover:text-violet-900" href="../index.php?sec=login">Login</a>
+                        <a class="block pt-2 pb-px px-3 text-gray-900 hover:border-b-2 hover:border-violet-900 hover:font-semibold hover:text-violet-900" href="../index.php?sec=inicio-sesion">Inicio de sesión</a>
                     </li>
                     <?php } ?>
                 </ul>

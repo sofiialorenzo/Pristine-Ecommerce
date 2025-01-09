@@ -2,7 +2,7 @@
 require_once "../functions/autoload.php";
 
 if (!isset($_GET['usuario_id'])) {
-    (new Alerta())->add_alerta("ID de usuario no proporcionado", "danger");
+    (new Alerta())->add_alerta("ID de usuario no proporcionado", "error");
     header("Location: index.php");
     exit();
 }

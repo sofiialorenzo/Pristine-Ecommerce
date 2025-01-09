@@ -6,7 +6,7 @@ if (!empty($_GET["c"])){
     (new Alerta())->add_alerta("Carrito Actualizado", "success");
     print_r($_GET["c"]);
 }else{
-    (new Alerta())->add_alerta("No se ha actualizado el carrito", "danger");
+    (new Alerta())->add_alerta("No se ha actualizado el carrito", "error");
 }
 
 

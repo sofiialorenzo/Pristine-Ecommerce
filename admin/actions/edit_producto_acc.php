@@ -35,7 +35,7 @@ try {
     header("Location: ../index.php?sec=admin_productos");
 } catch (Exception $e) {
     echo $e->getMessage();
-    (new Alerta())->add_alerta("Se no pudo editar", "danger");
+    (new Alerta())->add_alerta("Se no pudo editar", "error");
     die("No pude editar el producto");
 }
 

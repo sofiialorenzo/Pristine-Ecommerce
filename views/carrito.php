@@ -13,7 +13,7 @@ if ($miCarrito->usuarioAutenticado()) {
     <?= (new Alerta())->get_alertas() ?>
     <?php if (!$miCarrito->usuarioAutenticado()) { ?>
         <div class="text-center py-10 text-base sm:text-lg md:text-xl text-gray-800">
-            <p>Por favor, <a href="index.php?sec=login" class="text-violet-800 hover:underline">inicie sesión</a> o <a href="index.php?sec=registro" class="text-violet-800 hover:underline">regístrese</a> para empezar a comprar.</p>
+            <p>Por favor, <a href="index.php?sec=inicio-sesion" class="text-violet-800 hover:underline">inicie sesión</a> o <a href="index.php?sec=registro" class="text-violet-800 hover:underline">regístrese</a> para empezar a comprar.</p>
         </div>
     <?php } elseif (count($items)) { ?>
         <form action="admin/actions/update_carrito_acc.php" method="get" class="space-y-6">

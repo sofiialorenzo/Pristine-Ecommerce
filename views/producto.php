@@ -57,7 +57,7 @@ $categorias_secundarias_texto = implode(', ', $categorias_secundarias_nombres);
                         </button>
                     <?php } else { ?>
                         <a 
-                            href="index.php?sec=login" 
+                            href="index.php?sec=inicio-sesion" 
                             class="w-full block text-center bg-violet-900 text-white font-semibold py-3 px-6 rounded-lg hover:bg-transparent hover:border-2 hover:border-violet-900 hover:text-violet-900 transition">
                             Agregar al carrito
                         </a>

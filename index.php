@@ -1,12 +1,11 @@
 <?php
 require_once "functions/autoload.php";
-// require_once "class/Productos.php";
 // include_once "class/Conexion.php";
 
-$view = isset($_GET["sec"]) ? $_GET["sec"] : "home";
+$view = isset($_GET["sec"]) ? $_GET["sec"] : "inicio";
 $vista = "404";
 $secciones = [
-    "home" => [
+    "inicio" => [
         "titulo" => "Bienvenidos"
     ],
     "404" => [
@@ -15,23 +14,20 @@ $secciones = [
     "catalogo" => [
         "titulo" => "Todos los productos"
     ],
-    "productos" => [
+    "categorias" => [
         "titulo" => "Productos"
     ],
     "producto" => [
         "titulo" => "Detalle del producto"
     ],
-    "vegano" => [
-        "titulo" => "Productos veganos"
-    ],
     "newsletter" => [
         "titulo" => "Suscribite"
     ],
-    "login" => [
+    "inicio-sesion" => [
         "titulo" => "Ingresar"
     ],
     "registro" => [
-        "titulo" => "Registro"
+        "titulo" => "Registrarse"
     ],
     "carrito" => [
             "titulo" => "Carrito"

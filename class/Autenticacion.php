@@ -33,7 +33,7 @@ class Autenticacion
         if (isset($_SESSION['login'])) {
             return true;
         } else {
-            header('Location: ../index.php?sec=login');
+            header('Location: ../index.php?sec=inicio-sesion');
             exit();
         }
     }

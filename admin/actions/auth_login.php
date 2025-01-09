@@ -22,6 +22,6 @@ if($login){
 }else{
     (new Alerta())->add_alerta("Usuario o Contraseña incorrecto", "danger");
     (new Autenticacion())->log_out();
-    header("Location: ../index.php?sec=login");
+    header("Location: ../index.php?sec=inicio-sesion");
     exit();
 }

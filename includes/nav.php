@@ -5,7 +5,7 @@ $categorias_id = ( new Producto())->categorias_validas();
 <div class="sticky top-0 z-50 bg-slate-50">
   <nav class="w-full">
     <div class="max-w-screen-xl relative flex flex-row flex-wrap items-center justify-between p-4 mx-auto">
-    <a href="index.php?sec=home" class="flex items-center space-x-3">
+    <a href="index.php?sec=inicio" class="flex items-center space-x-3">
       <img src="img/nav/logo-pristine.svg" class="h-8" alt="PRISTINE logo" />
       <span class="self-center text-2xl font-semibold whitespace-nowrap hidden">PRISTINE</span>
     </a>
@@ -21,14 +21,14 @@ $categorias_id = ( new Producto())->categorias_validas();
     <div class="hidden absolute top-full md:static left-0 w-full md:block md:w-auto md:flex md:space-x-8" id="navbar-default">
       <ul class="flex flex-col md:flex-row p-4 md:p-0 space-y-4 md:space-y-0 md:space-x-8 bg-slate-50">
         <li>
-          <a class="block pt-2 pb-px px-3 text-gray-900 hover:border-b-2 hover:border-violet-900 hover:font-semibold hover:text-violet-900" href="index.php?sec=home">Home</a>
+          <a class="block pt-2 pb-px px-3 text-gray-900 hover:border-b-2 hover:border-violet-900 hover:font-semibold hover:text-violet-900" href="index.php?sec=inicio">Home</a>
         </li>
         <li>
           <a class="block pt-2 pb-px px-3 text-gray-900 hover:border-b-2 hover:border-violet-900 hover:font-semibold hover:text-violet-900" href="index.php?sec=catalogo">Catalogo</a>
         </li>
         <?php foreach ($categorias_id as $categoria) { ?>
         <li>
-          <a class="block pt-2 pb-px px-3 text-gray-900 hover:border-b-2 hover:border-violet-900 hover:font-semibold hover:text-violet-900" href="index.php?sec=productos&categoria=<?= $categoria['categoria_id'] ?>">
+          <a class="block pt-2 pb-px px-3 text-gray-900 hover:border-b-2 hover:border-violet-900 hover:font-semibold hover:text-violet-900" href="index.php?sec=categorias&categoria=<?= $categoria['categoria_id'] ?>">
             <?= $categoria['categoria'] ?>
           </a>
         </li>
@@ -40,7 +40,7 @@ $categorias_id = ( new Producto())->categorias_validas();
         </li>    
         <?php }else{ ?>
         <li>
-          <a class="navLinkLogos" href="index.php?sec=login"><i class="material-symbols-outlined block pt-2 pb-px px-3 md:p-0">person</i></a>
+          <a class="navLinkLogos" href="index.php?sec=inicio-sesion"><i class="material-symbols-outlined block pt-2 pb-px px-3 md:p-0">person</i></a>
         </li>  
         <?php } ?> 
         <li>

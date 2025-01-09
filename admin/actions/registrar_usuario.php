@@ -13,7 +13,7 @@ try {
     }else{
         (new Usuario())->insert($username, $email, $nombre_completo, $pass);        
     }
-    header("Location: ../../index.php?sec=login");
+    header("Location: ../../index.php?sec=inicio-sesion");
 } catch (Exeption $e) {
     echo $e->getMessage();
 }

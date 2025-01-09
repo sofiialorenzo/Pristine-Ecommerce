@@ -8,7 +8,7 @@
         header("Location: ../index.php?sec=admin_categorias");
     } catch (\Exception $e) {
         echo $e->getMessage();
-        (new Alerta())->add_alerta("No se pudo agregar categoria", "danger");
+        (new Alerta())->add_alerta("No se pudo agregar categoria", "error");
         die("No pude cargar la categoria :(");
     }
 

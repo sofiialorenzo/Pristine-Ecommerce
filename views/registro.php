@@ -61,7 +61,7 @@
 
             <div class="text-center">
                 <a 
-                    href="index.php?sec=login" 
+                    href="index.php?sec=inicio-sesion" 
                     class="text-sm text-violet-900 hover:underline"
                 >
                     ¿Ya tienes una cuenta? Inicia Sesión

@@ -13,7 +13,7 @@
         header("Location: ../index.php?sec=admin_marcas");
     } catch (\Exception $e) {
         echo $e->getMessage();
-        (new Alerta())->add_alerta("No se pudo agregar la marca", "danger");
+        (new Alerta())->add_alerta("No se pudo agregar la marca", "error");
         die("No pude cargar la marca :(");
     }
 

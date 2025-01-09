@@ -45,7 +45,7 @@
 
         <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
             <span class="text-sm text-gray-600 text-center sm:text-left">© 2024 
-                <a href="#" class="hover:underline">Pristine™</a>. Todos los derechos reservados.
+                <a href="#" class="hover:underline">Pristine™</a>. Sofía Lorenzo - Programación II - DWT3AP. Proyecto realizado con fines educativos
             </span>
         </div>
     </div>

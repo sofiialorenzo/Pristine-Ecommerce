@@ -1,8 +1,14 @@
 <?php
-echo "<pre>";
-print_r($_POST);
-echo "</pre>";
+// echo "<pre>";
+// print_r($_POST);
+// echo "</pre>";
+session_start();
 require_once "../../functions/autoload.php";
+if (empty($_POST["nombreProducto"]) || empty($_POST["descripcion"]) || empty($_POST["marca_id"]) || empty($_POST["contNeto"]) || empty($_POST["categoria_id"]) || empty($_POST["precio"]) || empty($_FILES["imagen"])) {
+
+    (new Alerta())->add_alerta("Debe completar todos los campos", "error");
+    header("Location: ../index.php?sec=add_producto");
+}
 
 $categorias_secundarias = $_POST["categorias_secundarias"];
 
@@ -17,11 +23,12 @@ try{
         $_POST["categoria_id"],
         $_POST["precio"],
     );
-
-    foreach ($categorias_secundarias as $categoria_id) {
+    if(!empty($_POST["categorias_secundarias"])){    foreach ($categorias_secundarias as $categoria_id) {
         (new Producto())->add_categorias($categoria_id, $id_producto);
     }
+    }
 
+    (new Alerta())->add_alerta("Producto agregado exitosamente.", "success");
     header("Location: ../index.php?sec=admin_productos");
 } catch (\Exception $e) {
     echo $e->getMessage();

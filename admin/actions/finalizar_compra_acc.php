@@ -4,8 +4,8 @@ session_start();
 require_once "../../functions/autoload.php";
 
 if (!isset($_SESSION['login']['id']) || $_SESSION['login']['roles'] !== 'usuario') {
-    (new Alerta())->add_alerta("Debes iniciar sesión para finalizar la compra", "danger");
-    header("Location: ../../index.php?sec=login");
+    (new Alerta())->add_alerta("Debes iniciar sesión para finalizar la compra", "error");
+    header("Location: ../../index.php?sec=inicio-sesion");
     exit();
 }
 
@@ -21,7 +21,7 @@ if ($compraGuardada) {
     header("Location: ../../index.php?sec=carrito");
     exit();
 } else {
-    (new Alerta())->add_alerta("Error al realizar la compra", "danger");
+    (new Alerta())->add_alerta("Error al realizar la compra", "error");
     header("Location: ../../index.php?sec=carrito");
     exit();
 }
