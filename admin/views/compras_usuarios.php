@@ -18,28 +18,28 @@ $compras = $PDOStatement->fetchAll(PDO::FETCH_ASSOC);
 
 <div class="container mx-auto px-4 py-28">
     <?= (new Alerta())->get_alertas() ?>
-    <h1 class="text-center font-bold text-2xl md:text-3xl lg:text-4xl mb-16 text-gray-900">Compras del Usuario</h1>
+    <h1 class="text-center font-bold text-2xl md:text-3xl lg:text-4xl mb-16 text-gray-900" id="compras-usuario">Compras del Usuario</h1>
 
     <?php if (!empty($compras)) : ?>
-        <div class="hidden lg:block overflow-x-auto shadow-lg rounded-lg bg-white mb-6">
-            <table class="min-w-full table-auto">
+        <div class="hidden lg:block overflow-x-auto shadow-lg rounded-lg bg-white mb-6" aria-labelledby="compras-usuario">
+            <table class="min-w-full table-auto" aria-describedby="compras-usuario">
                 <thead class="bg-violet-200">
                     <tr>
-                        <th class="px-4 py-2 text-left text-gray-800">ID de Compra</th>
-                        <th class="px-4 py-2 text-left text-gray-800">ID del Producto</th>
-                        <th class="px-4 py-2 text-left text-gray-800">Producto</th>
-                        <th class="px-4 py-2 text-left text-gray-800">Cantidad</th>
-                        <th class="px-4 py-2 text-left text-gray-800">Total</th>
+                        <th class="px-4 py-2 text-left text-gray-800" scope="col" aria-label="ID de la compra">ID de Compra</th>
+                        <th class="px-4 py-2 text-left text-gray-800" scope="col" aria-label="ID del producto">ID del Producto</th>
+                        <th class="px-4 py-2 text-left text-gray-800" scope="col" aria-label="Nombre del producto">Producto</th>
+                        <th class="px-4 py-2 text-left text-gray-800" scope="col" aria-label="Cantidad comprada">Cantidad</th>
+                        <th class="px-4 py-2 text-left text-gray-800" scope="col" aria-label="Total de la compra">Total</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php foreach ($compras as $compra) : ?>
                         <tr class="border-b hover:bg-violet-50">
-                            <td class="px-4 py-3"><?= $compra['id'] ?></td>
-                            <td class="px-4 py-3"><?= $compra['producto_id'] ?></td>
-                            <td class="px-4 py-3"><?= $compra['nombreProducto'] ?></td>
-                            <td class="px-4 py-3"><?= $compra['cantidad'] ?></td>
-                            <td class="px-4 py-3">$<?= $compra['total'] ?></td>
+                            <td class="px-4 py-3" aria-label="ID de la compra"><?= $compra['id'] ?></td>
+                            <td class="px-4 py-3" aria-label="ID del producto"><?= $compra['producto_id'] ?></td>
+                            <td class="px-4 py-3" aria-label="Nombre del producto"><?= $compra['nombreProducto'] ?></td>
+                            <td class="px-4 py-3" aria-label="Cantidad comprada"><?= $compra['cantidad'] ?></td>
+                            <td class="px-4 py-3" aria-label="Total de la compra">$<?= $compra['total'] ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
@@ -47,21 +47,21 @@ $compras = $PDOStatement->fetchAll(PDO::FETCH_ASSOC);
         </div>
 
         <!-- mobile -->
-        <div class="lg:hidden grid gap-6 mt-6">
+        <div class="lg:hidden grid gap-6 mt-6" aria-labelledby="compras-usuario">
             <?php foreach ($compras as $compra) { ?>
-                <div class="p-4 shadow-lg rounded-lg bg-white">
+                <div class="p-4 shadow-lg rounded-lg bg-white" aria-labelledby="compra-<?= $compra['id'] ?>">
                     <div class="flex flex-col space-y-4">
-                        <h5 class="text-xl font-semibold text-gray-800">Compra ID: <?= $compra['id'] ?></h5>
-                        <p class="text-sm text-gray-500"><strong>ID Producto:</strong> <?= $compra['producto_id'] ?></p>
-                        <p class="text-sm text-gray-600"><strong>Producto:</strong> <?= $compra['nombreProducto'] ?></p>
-                        <p class="text-sm text-gray-600"><strong>Cantidad:</strong> <?= $compra['cantidad'] ?></p>
-                        <p class="text-sm text-gray-600"><strong>Total:</strong> $<?= $compra['total'] ?></p>
+                        <h5 class="text-xl font-semibold text-gray-800" id="compra-<?= $compra['id'] ?>" aria-label="Compra ID: <?= $compra['id'] ?>">Compra ID: <?= $compra['id'] ?></h5>
+                        <p class="text-sm text-gray-500" aria-label="ID Producto"><strong>ID Producto:</strong> <?= $compra['producto_id'] ?></p>
+                        <p class="text-sm text-gray-600" aria-label="Nombre del Producto"><strong>Producto:</strong> <?= $compra['nombreProducto'] ?></p>
+                        <p class="text-sm text-gray-600" aria-label="Cantidad comprada"><strong>Cantidad:</strong> <?= $compra['cantidad'] ?></p>
+                        <p class="text-sm text-gray-600" aria-label="Total de la compra"><strong>Total:</strong> $<?= $compra['total'] ?></p>
                     </div>
                 </div>
             <?php } ?>
         </div>
 
     <?php else : ?>
-        <p class="text-center text-gray-600 text-xl">No se encontraron compras para este usuario.</p>
+        <p class="text-center text-gray-600 text-xl" aria-live="polite">No se encontraron compras para este usuario.</p>
     <?php endif; ?>
 </div>
