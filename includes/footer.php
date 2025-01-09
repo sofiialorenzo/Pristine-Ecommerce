@@ -47,6 +47,17 @@
             <span class="text-sm text-gray-600 text-center sm:text-left">© 2024 
                 <a href="#" class="hover:underline">Pristine™</a>. Sofía Lorenzo - Programación II - DWT3AP. Proyecto realizado con fines educativos
             </span>
+            <div class="flex justify-center space-x-6 mt-4 sm:mt-0">
+                <a href="https://www.linkedin.com/in/sof%C3%ADa-lorenzo-276b7b344/" target="_blank">
+                    <i class="fab fa-linkedin fa-lg text-gray-800 hover:text-violet-700"></i>
+                </a>
+                <a href="https://github.com/sofiialorenzo" target="_blank">
+                    <i class="fab fa-github fa-lg text-gray-800 hover:text-violet-700"></i>
+                </a>
+                <a href="https://www.behance.net/soffialorenzo" target="_blank">
+                    <i class="fab fa-behance fa-lg text-gray-800 hover:text-violet-700"></i>
+                </a>
+            </div>
         </div>
     </div>
 </footer>
