@@ -18,12 +18,12 @@ try {
     }
 
     $producto->edit(
-        $_POST["nombreProducto"],  
-        $_POST["categoria_id"], 
-        $_POST["marca_id"], 
-        $_POST["contenidoNeto"],
-        $_POST["precio"],
+        $_POST["nombreProducto"],
         $_POST["descripcion"],
+        $_POST["marca_id"],
+        $_POST["contenidoNeto"],
+        $_POST["categoria_id"], 
+        $_POST["precio"],
         $_POST["id"]
     );
 

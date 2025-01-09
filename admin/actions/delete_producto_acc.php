@@ -4,7 +4,7 @@ require_once '../../functions/autoload.php';
 $id = $_GET["id"] ?? false;
 $producto = (new Producto())->catalogo_x_id($id);
 try {
-    
+    (new Producto())->clear_categorias($id);
     if( $producto->getImagen() != "" ){
         (new Imagen())->borrarImagen("../../img/productos/".$producto->getImagen());
     }

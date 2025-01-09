@@ -22,7 +22,6 @@ try{
         (new Producto())->add_categorias($categoria_id, $id_producto);
     }
 
-
     header("Location: ../index.php?sec=admin_productos");
 } catch (\Exception $e) {
     echo $e->getMessage();

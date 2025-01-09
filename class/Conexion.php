@@ -4,7 +4,7 @@ class Conexion{
     protected const DB_SERVER = "localhost";              
     protected const DB_USER = "root";
     protected const DB_PASS = "";
-    protected const DB_NAME = "pristine";
+    protected const DB_NAME = "pristine2";
     protected const DB_DSN = 'mysql:host=' . self::DB_SERVER . ';dbname=' . self::DB_NAME . ';charset=utf8mb4';
 
     protected static ?PDO $db = null;

@@ -1,40 +1,55 @@
 <?php
 
-require_once '../functions/autoload.php';
-
 $usuarios = (new Usuario())->catalogo_completo();
 
 ?>
+<div class="container mx-auto px-4 py-28">
+    <?= (new Alerta())->get_alertas() ?>
+    <h1 class="text-center font-bold text-2xl md:text-3xl lg:text-4xl mb-16 text-gray-900">Administración de Usuarios</h1>
 
-<div class="row my-5">
-    <div class="col">
-        <h1 class="text-center mb-5 fw-bold">USUARIOS REGISTRADOS</h1>
-        <div class="row mb-5 d-flex align-items-center">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Email</th>
-                        <th>Nombre de usuario</th>
-                        <th>Nombre completo</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($usuarios as $usuario) { ?>
-                    <tr>
-                        <td><?= $usuario->getId() ?> </td>
-                        <td><?= $usuario->getEmail() ?> </td>
-                        <td><?= $usuario->getNombreUsuario() ?> </td>
-                        <td><?= $usuario->getNombre_completo() ?> </td>
-                        <td>
-                            <a href="index.php?sec=compras_usuarios&usuario_id=<?= $usuario->getId() ?>" class="d-block btn btn-sm">Ver Compras</a>
+    <div class="hidden lg:block overflow-x-auto shadow-lg rounded-lg bg-white">
+        <table class="min-w-full table-auto">
+            <thead class="bg-violet-200">
+                <tr>
+                    <th class="px-4 py-2 text-left text-gray-800">ID</th>
+                    <th class="px-4 py-2 text-left text-gray-800">Email</th>
+                    <th class="px-4 py-2 text-left text-gray-800">Nombre de Usuario</th>
+                    <th class="px-4 py-2 text-left text-gray-800">Nombre Completo</th>
+                    <th class="px-4 py-2 text-left text-gray-800">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($usuarios as $usuario) { ?>
+                    <tr class="border-b hover:bg-violet-50">
+                        <td class="px-4 py-3"><?= $usuario->getId() ?></td>
+                        <td class="px-4 py-3"><?= $usuario->getEmail() ?></td>
+                        <td class="px-4 py-3"><?= $usuario->getNombreUsuario() ?></td>
+                        <td class="px-4 py-3"><?= $usuario->getNombre_completo() ?></td>
+                        <td class="px-4 py-3 space-y-2">
+                            <a href="index.php?sec=compras_usuarios&usuario_id=<?= $usuario->getId() ?>"
+                               class="block bg-violet-800 text-white font-semibold py-3 px-6 rounded-lg transition hover:bg-transparent hover:outline hover:outline-2 hover:outline-violet-900 hover:text-violet-900 text-center">
+                                Ver Compras
+                            </a>
                         </td>
                     </tr>
-                    <?php } ?>
-                </tbody>
-            </table>
+                <?php } ?>
+            </tbody>
+        </table>
+    </div>
 
-        </div>
+    <!-- mobile -->
+    <div class="grid gap-6 mt-6 lg:hidden">
+        <?php foreach ($usuarios as $usuario) { ?>
+            <div class="p-4 shadow-lg rounded-lg bg-white flex flex-col space-y-4">
+                <h5 class="text-xl font-semibold text-gray-800"><?= $usuario->getNombreUsuario() ?></h5>
+                <p class="text-sm text-gray-500"><?= $usuario->getEmail() ?></p>
+                <p class="text-sm text-gray-600"><strong>Nombre Completo:</strong> <?= $usuario->getNombre_completo() ?></p>
+                <div class="flex space-x-4">
+                    <a href="index.php?sec=compras_usuarios&usuario_id=<?= $usuario->getId() ?>" class="px-4 py-2 text-white bg-violet-600 hover:bg-violet-700 rounded w-full text-center">
+                        Ver Compras
+                    </a>
+                </div>
+            </div>
+        <?php } ?>
     </div>
 </div>
