@@ -6,7 +6,7 @@ $productosMasVendidos = (new Producto())->bestSellers();
 <div class="relative">
     <figure>
         <video class="w-full h-screen object-cover" autoplay muted loop>
-            <source src="img/videos/banner-pristine.mp4" type="video/mp4">
+            <source src="img/videos/banner-lunaria.mp4" type="video/mp4">
         </video>
     </figure>
     <div class="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-50 text-white">
@@ -21,10 +21,10 @@ $productosMasVendidos = (new Producto())->bestSellers();
   <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 items-center gap-12">
     <article class="w-full text-center md:text-left">
       <h2 class="text-2xl md:text-3xl lg:text-4xl font-extrabold text-violet-900 mb-6">
-        ¿Por qué elegir Pristine?
+        ¿Por qué elegir Lunaria?
       </h2>
       <p class="text-base sm:text-lg md:text-xl text-gray-800 leading-relaxed mb-6">
-        En Pristine, te ofrecemos una selección única de productos de cuidado de la piel que combinan 
+        En Lunaria, te ofrecemos una selección única de productos de cuidado de la piel que combinan 
         <span class="font-semibold text-violet-900">calidad</span>, 
         <span class="font-semibold text-violet-900">innovación</span>, y los 
         <span class="font-semibold text-violet-900">mejores ingredientes</span>, avalados por las marcas más prestigiosas del mundo.
@@ -42,8 +42,8 @@ $productosMasVendidos = (new Producto())->bestSellers();
     </article>
     <figure class="flex justify-center md:justify-end">
       <img 
-        src="img/home/pristine-productos.jpg" 
-        alt="Productos Pristine" 
+        src="img/home/lunaria-productos.jpg" 
+        alt="Productos Lunaria" 
         class="rounded-lg object-cover shadow-lg w-full md:w-2/3 max-h-96"
       >
     </figure>

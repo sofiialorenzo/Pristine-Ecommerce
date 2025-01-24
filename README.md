@@ -1,5 +1,5 @@
-# Pristine
- Pristine es una plataforma de comercio electrónico dedicada a la venta de artículos de belleza. Este proyecto permite a los usuarios navegar por diferentes productos, gestionar sus compras, y a los administradores controlar los catálogos, usuarios, y más.
+# Lunaria
+ Lunaria es una plataforma de comercio electrónico dedicada a la venta de artículos de belleza. Este proyecto permite a los usuarios navegar por diferentes productos, gestionar sus compras, y a los administradores controlar los catálogos, usuarios, y más.
 
 ## Características principales
 * Catálogo de Productos: Los usuarios pueden explorar un catálogo de artículos de belleza, con detalles como categorías, marcas y descripciones.

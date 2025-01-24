@@ -6,8 +6,8 @@ $categorias_id = ( new Producto())->categorias_validas();
   <nav class="w-full">
     <div class="max-w-screen-xl relative flex flex-row flex-wrap items-center justify-between p-4 mx-auto">
     <a href="index.php?sec=inicio" class="flex items-center space-x-3">
-      <img src="img/nav/logo-pristine.svg" class="h-8" alt="PRISTINE logo" />
-      <span class="self-center text-2xl font-semibold whitespace-nowrap hidden">PRISTINE</span>
+      <img src="img/nav/logo-lunaria.svg" class="h-8" alt="LUNARIA logo" />
+      <span class="self-center text-2xl font-semibold whitespace-nowrap hidden">LUNARIA</span>
     </a>
     <button data-collapse-toggle="navbar-default" type="button"
       class="inline-flex items-center p-2 w-10 h-10 justify-center rounded-lg md:hidden text-violet-800 text-sm" aria-controls="navbar-dropdown" aria-expanded="false">

@@ -68,7 +68,7 @@ if (!array_key_exists($seccion, $secciones_validas)) {
 <head>
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pristine</title>
+    <title>Lunaria</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
@@ -80,8 +80,8 @@ if (!array_key_exists($seccion, $secciones_validas)) {
 <nav class="w-full">
         <div class="max-w-screen-xl relative flex flex-row flex-wrap items-center justify-between p-4 mx-auto">
             <a class="flex items-center space-x-3">
-            <img src="../img/nav/logo-pristine.svg" class="h-8" alt="PRISTINE logo" />
-            <span class="self-center text-2xl font-semibold whitespace-nowrap hidden">PRISTINE</span>
+            <img src="../img/nav/logo-lunaria.svg" class="h-8" alt="LUNARIA logo" />
+            <span class="self-center text-2xl font-semibold whitespace-nowrap hidden">LUNARIA</span>
             </a>
             <button data-collapse-toggle="navbar-default" type="button"
             class="inline-flex items-center p-2 w-10 h-10 justify-center rounded-lg md:hidden text-violet-800 text-sm" aria-controls="navbar-dropdown" aria-expanded="false">

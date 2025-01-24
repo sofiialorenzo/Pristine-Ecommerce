@@ -3,8 +3,8 @@
         <div class="flex flex-col md:flex-row md:justify-between">
             <div class="mb-6 md:mb-0">
                 <a href="#" class="flex items-center">
-                    <img src="img/nav/logo-pristine.svg" class="h-8" alt="PRISTINE logo" />
-                    <span class="self-center text-2xl font-semibold whitespace-nowrap text-slate-50">PRISTINE</span>
+                    <img src="img/nav/logo-lunaria.svg" class="h-8" alt="LUNARIA logo" />
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap text-slate-50">LUNARIA</span>
                 </a>
             </div>
 
@@ -34,7 +34,7 @@
                 <div>
                     <h3 class="mb-6 text-sm font-bold uppercase text-violet-950">Contacto</h3>
                     <ul class="text-white font-medium">
-                        <li class="mb-4 text-gray-800">info.pristine@mail.com</li>
+                        <li class="mb-4 text-gray-800">info.lunaria@mail.com</li>
                         <li class="mb-4 text-gray-800">54999111</li>
                     </ul>
                 </div>
@@ -45,7 +45,7 @@
 
         <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
             <span class="text-sm text-gray-600 text-center sm:text-left">© 2024 
-                <a href="#" class="hover:underline">Pristine™</a>. Sofía Lorenzo - Programación II - DWT3AP. Proyecto realizado con fines educativos
+                <a href="#" class="hover:underline">Lunaria™</a>. Sofía Lorenzo - Programación II - DWT3AP. Proyecto realizado con fines educativos
             </span>
             <div class="flex justify-center space-x-6 mt-4 sm:mt-0">
                 <a href="https://www.linkedin.com/in/sof%C3%ADa-lorenzo-276b7b344/" target="_blank">
